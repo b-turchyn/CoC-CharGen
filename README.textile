@@ -37,9 +37,7 @@ h1. Usage
 
 h1. Support
 
-_CoC-CharGen_ is supported by the "I, Gamer Podcast":http://igamer.ca
-and "BrianTurchyn.net":http://brianturchyn.net . Support them by listening
-to the podcast or tossing them a couple bucks for a beer. 
+_CoC-CharGen_ is supported by the "I, Gamer Podcast":http://igamer.ca and "BrianTurchyn.net":http://brianturchyn.net . Support them by listening to the podcast or tossing them a couple bucks for a beer. Beer has been known to "fuel programming productivity":http://xkcd.com/323/ !
 
 h1. The Developers
 

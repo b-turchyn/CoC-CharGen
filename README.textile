@@ -4,3 +4,5 @@ _CoC-CharGen_ is a character generator for Call of Cthulhu (CoC) for both PCs (p
 * Universal - it's coded in good ol' PHP!
 * Easy to use - just click a button!
 * Expandable - a MySQL backend allows adding more names, places, colleges, and other information. 
+
+!http://www.ohloh.net/p/coc-chargen/widgets/project_thin_badge.gif(Ohloh Page)!:https://www.ohloh.net/p/coc-chargen

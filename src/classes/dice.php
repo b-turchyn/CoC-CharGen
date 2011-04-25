@@ -3,21 +3,31 @@ class SingleDie {
 	private $sided = 0;
 	private $currentValue = 1;
 	private $hasRolled = false;
+	private $loaded = false;
 	
 	function __construct($sided) {
 		if($sided != null && is_int($sided) && $sided >= 4) {
 			$this->sided = $sided;
+			$this->loaded = true;
 		}
 	}
 	
 	function roll() {
-		$this->currentValue = mt_rand(1, $sided);
+		$this->currentValue = mt_rand(1, $this->sided);
 		$this->hasRolled = true;
 		return $this->currentValue;
 	}
 	
 	function getResult() {
 		return ($this->hasRolled ? $this->currentValue : false);
+	}
+	
+	function isLoaded() {
+		return $this->loaded;
+	}
+	
+	function getSides() {
+		return $this->sided;
 	}
 }
 

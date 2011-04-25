@@ -1,5 +1,0 @@
-# About
-CoC-CharGen is a character generator for Call of Cthulhu (CoC) for both PCs (player characters) and NPCs (non-player characters). It supports 1890's, 1920's, and 1990's versions of the game. It's goal is to be:
-* Universal - it's coded in good ol' PHP!
-* Easy to use - just click a button!
-* Expandable - a MySQL backend allows adding more names, places, colleges, and other information. 

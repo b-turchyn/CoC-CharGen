@@ -3,6 +3,48 @@ h1. About
 _CoC-CharGen_ is a character generator for Call of Cthulhu (CoC) for both PCs (player characters) and NPCs (non-player characters). It supports 1890's, 1920's, and 1990's versions of the game. It's goal is to be:
 * Universal - it's coded in good ol' PHP!
 * Easy to use - just click a button!
-* Expandable - a MySQL backend allows adding more names, places, colleges, and other information. 
+* Expandable - a MySQL backend allows adding more names, places, colleges, and other information.
+* Up-to-date - other generators haven't been updated in years!
+* Complete - _CoC-CharGen_ will create everything for you, including your backstory, appearance, address, and more. 
 
 !http://www.ohloh.net/p/coc-chargen/widgets/project_thin_badge.gif(Ohloh Page)!:https://www.ohloh.net/p/coc-chargen
+
+h1. Features
+
+* General
+** Complete stats generation
+** Automatic calculation of IDEA, LUK, KNOW, hit points, and sanity points.
+** Option to disable mythos points allocation
+** Fully randomized country creation
+** Home town and name generated based on the home country to match region and ethnic background (% chance to be a non-native name based on era)
+** Education location (ie. what university) based on income level
+** Weighted randomization algorithm for occupation based on education
+** Appearance generates randomly based on size, strength, appearance.
+** Backstory randomly generates from lists of hundreds of different combinations of options. 
+* Real content and data
+** Over 200 real, accredited universities and colleges, all historically accurate, with minimum required income levels. 
+** Thousands of first and last names, pulled from actual census data from the CoC eras.
+** Thousands of street names and suffixes, allowing in virtually millions of different street names.
+** Randomized chance of having a pre-existing mental disorder based on documented rates in CoC eras. 
+
+h1. Installation
+
+* Unpack the src/ directory into your public_html/ (or equivalent) directory of your choice, and go to the /install/ page. Follow the steps!
+
+h1. Usage
+
+* _TODO_
+
+h1. Support
+
+_CoC-CharGen_ is supported by the "I, Gamer Podcast":http://igamer.ca
+and "BrianTurchyn.net":http://brianturchyn.net . Support them by listening
+to the podcast or tossing them a couple bucks for a beer. 
+
+h1. The Developers
+
+_TODO_
+
+h1. License
+
+_TODO_

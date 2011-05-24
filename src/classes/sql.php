@@ -19,29 +19,69 @@
  ************************************************************************/
 
 class MySQLQueries {
+  // Private instance variables
+  private $conn = null; // Connection holder
+  private $prefix = "";  // Database table prefixes
+
+
   // List of all eras
-  private const $getEras =
-    "SELECT * FROM ?eras ORDER BY name ASC";
+  const getEras = "SELECT * FROM ?eras ORDER BY name ASC";
 
   // Count number of first names
-  private const $getFirstNameCount =
-    "SELECT COUNT(*) FROM ?names " +
-    "WHERE isfirstname_sw = true " +
-    "AND deleted_dt IS NOT NULL";
+  const getFirstNameCount = <<<'EOT'
+    SELECT COUNT(*) FROM ?names
+    WHERE isfirstname_sw = true
+    AND era = ?
+    AND ( gender = ? OR gender = ? )
+    AND deleted_dt IS NOT NULL
+EOT;
 
   // Count number of last names
-  private const $getLastNameCount =
-    "SELECT COUNT(*) FROM ?names " +
-    "WHERE isfirstname_sw = false " +
-    "AND deleted_dt IS NOT NULL";
+  const getLastNameCount = <<<'EOT'
+    SELECT COUNT(*) FROM ?names 
+    WHERE isfirstname_sw = false 
+    AND era = ?
+    AND ( gender = ? OR gender = ? )
+    AND deleted_dt IS NOT NULL
+EOT;
 
   // Retrieve first and last name from a random index
-  private const $getFullName = 
-    "SELECT name FROM ?names " +
-    "WHERE isfirstname_sw = true " +
-    "LIMIT ?, 1 " +
-    "UNION SELECT name FROM ?names " +
-    "WHERE isfirstname_sw = false " +
-    "LIMIT ?, 1 "
+  const getFullName = <<<'EOT'
+    SELECT name FROM ?names 
+    WHERE isfirstname_sw = true 
+    LIMIT ?, 1 
+    UNION SELECT name FROM ?names 
+    WHERE isfirstname_sw = false 
+    LIMIT ?, 1
+EOT;
+
+  function __construct($server, $user, $password, $database) {
+    $this->conn = new mysqli($server, $user, $password, $database);
+
+    // Check for error
+    if(mysqli_connect_errno()) {
+      printf("Connect failed: %s\n", mysqli_connect_error());
+    }
+  }
+
+  function __destruct() {
+    if($this->conn != null)
+      $this->conn->close();
+  }
+
+  public function getFirstNameCount($era, $gender) {
+    $result = false;
+    if( $stmt = $this->conn->prepare(self::getFirstNameCount) ) {
+      $stmt->bind_param("siss", $this->prefix, $era, $gender, 'B');
+      $stmt->execute();
+      // Retrieve the result, and return false on failure.
+      $stmt->bind_result($res);
+      if ( $stmt->fetch() ) {
+        $result = $res;
+      }
+    }
+
+    return $result;
+  }
 }
 ?>

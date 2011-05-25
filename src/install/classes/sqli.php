@@ -25,15 +25,54 @@
  * @author Brian Turchyn
  */
 
-class SQLiInstall extends mysqli {
-  private $handle;
+require_once dirname(__FILE__) . '/io.php';
 
-  public function __construct($host, $user, $pass, $database) {
+class SQLiInstall extends mysqli{
+	/** Holds the table prefix for all tables */
+  private $prefix;
+
+  public function __construct($host, $user, $pass, $database, $prefix) {
+		
+		$this->prefix = $prefix;
+		
     parent::__construct($host, $user, $pass, $database);
     // Check for errors
-    if($this->connect_error()) {
-      die("Connection error (" . $this->connect_errno() . ") " . $this->connect_error());
+    if(mysqli_connect_error()) {
+      die("Connection error (" . mysqli_connect_errno() . ") " . mysqli_connect_error());
     }
   }
+
+	/**
+	 * Runs a SQL query from the tabledata/ folder
+	 *
+	 * @param string $filename 
+	 * @param string $paramtypes Bind_param based parameter types
+	 * @param string $paramvalues The values to bind in
+	 * @return An array. Index 0 is the error code (0 on success). Index 1 is the error text on failure, or the number of rows affected on pass
+	 * @author Brian Turchyn
+	 */
+	public function runQueryFromFile($filename, $paramtypes = null, $paramvalues = null) {
+		$querytext = sprintf(FileIO::getFile("tabledata/".$filename), $this->prefix);
+		if($stmt = $this->prepare($querytext) ) {
+			if ( $paramtypes && $paramvalues )
+				$stmt->bind_param($types, $values);
+			$stmt->execute();
+			// Did an error occur?
+			if($stmt->errno == 0) {
+				@$stmt->bind_result($res);
+				$stmt->fetch();
+			} else {
+				$res = array($stmt->errno, $stmt->error);
+			}
+			$stmt->close();
+		} else {
+			$res = array($this->errno, $this->error);
+		}
+		return $res;
+	}
+
+	public function __destruct() {
+		mysqli_close($this);
+	}
 }
 ?>

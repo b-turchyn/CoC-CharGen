@@ -48,6 +48,5 @@ if(isset($_POST['coc_install'])) {
 		<input type="submit" name="coc_install" value="Install Database" />
 	</form>
 	<?php
-	$q = new mysqli("rs5.websitehostserver.net", "bturchyn_chargen", "dummypass", "bturchyn_chargen");
 }
 ?>

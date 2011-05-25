@@ -28,32 +28,29 @@ class MySQLQueries {
   const getEras = "SELECT * FROM ?eras ORDER BY name ASC";
 
   // Count number of first names
-  const getFirstNameCount = <<<'EOT'
-    SELECT COUNT(*) FROM ?names
-    WHERE isfirstname_sw = true
+  const getFirstNameCount = 
+    "SELECT COUNT(*) FROM ?names 
+     WHERE isfirstname_sw = true
     AND era = ?
     AND ( gender = ? OR gender = ? )
-    AND deleted_dt IS NOT NULL
-EOT;
+    AND deleted_dt IS NOT NULL";
 
   // Count number of last names
-  const getLastNameCount = <<<'EOT'
-    SELECT COUNT(*) FROM ?names 
+  const getLastNameCount = 
+    "SELECT COUNT(*) FROM ?names 
     WHERE isfirstname_sw = false 
     AND era = ?
     AND ( gender = ? OR gender = ? )
-    AND deleted_dt IS NOT NULL
-EOT;
+    AND deleted_dt IS NOT NULL";
 
   // Retrieve first and last name from a random index
-  const getFullName = <<<'EOT'
-    SELECT name FROM ?names 
+  const getFullName = 
+    "SELECT name FROM ?names 
     WHERE isfirstname_sw = true 
     LIMIT ?, 1 
     UNION SELECT name FROM ?names 
     WHERE isfirstname_sw = false 
-    LIMIT ?, 1
-EOT;
+    LIMIT ?, 1";
 
   function __construct($server, $user, $password, $database) {
     $this->conn = new mysqli($server, $user, $password, $database);
@@ -62,6 +59,7 @@ EOT;
     if(mysqli_connect_errno()) {
       printf("Connect failed: %s\n", mysqli_connect_error());
     }
+		echo $this->conn;
   }
 
   function __destruct() {

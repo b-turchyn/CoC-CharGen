@@ -17,4 +17,8 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  ************************************************************************/
+
+require_once 'classes/sql.php';
+
+$sql = new MySQLQueries("localhost", "bturchyn_chargen", "dummypass", "bturchyn_chargen");
 ?>

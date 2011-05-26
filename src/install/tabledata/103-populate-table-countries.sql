@@ -1,273 +1,282 @@
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Afghanistan", "AFG", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Albania", "ALB", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Algeria", "DZA", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Andorra", "AND", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Angola", "AGO", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Antigua and Barbuda", "ATG", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Argentina", "ARG", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Armenia", "ARM", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Australia", "AUS", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Austria", "AUT", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Azerbaijan", "AZE", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Bahamas, The", "BHS", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Bahrain", "BHR", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Bangladesh", "BGD", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Barbados", "BRB", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Belarus", "BLR", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Belgium", "BEL", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Belize", "BLZ", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Benin", "BEN", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Bhutan", "BTN", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Bolivia", "BOL", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Bosnia and Herzegovina", "BIH", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Botswana", "BWA", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Brazil", "BRA", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Brunei", "BRN", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Bulgaria", "BGR", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Burkina Faso", "BFA", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Burundi", "BDI", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Cambodia", "KHM", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Cameroon", "CMR", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Canada", "CAN", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Cape Verde", "CPV", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Central African Republic", "CAF", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Chad", "TCD", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Chile", "CHL", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "China, People's Republic of", "CHN", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Colombia", "COL", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Comoros", "COM", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Congo, Democratic Republic of the (Congo . Kinshasa)", "COD", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Congo, Republic of the (Congo . Brazzaville)", "COG", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Costa Rica", "CRI", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Cote d'Ivoire (Ivory Coast)", "CIV", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Croatia", "HRV", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Cuba", "CUB", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Cyprus", "CYP", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Czech Republic", "CZE", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Denmark", "DNK", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Djibouti", "DJI", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Dominica", "DMA", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Dominican Republic", "DOM", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Ecuador", "ECU", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Egypt", "EGY", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "El Salvador", "SLV", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Equatorial Guinea", "GNQ", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Eritrea", "ERI", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Estonia", "EST", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Ethiopia", "ETH", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Fiji", "FJI", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Finland", "FIN", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "France", "FRA", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Gabon", "GAB", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Gambia, The", "GMB", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Georgia", "GEO", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Germany", "DEU", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Ghana", "GHA", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Greece", "GRC", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Grenada", "GRD", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Guatemala", "GTM", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Guinea", "GIN", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Guinea-Bissau", "GNB", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Guyana", "GUY", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Haiti", "HTI", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Honduras", "HND", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Hungary", "HUN", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Iceland", "ISL", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "India", "IND", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Indonesia", "IDN", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Iran", "IRN", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Iraq", "IRQ", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Ireland", "IRL", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Israel", "ISR", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Italy", "ITA", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Jamaica", "JAM", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Japan", "JPN", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Jordan", "JOR", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Kazakhstan", "KAZ", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Kenya", "KEN", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Kiribati", "KIR", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Korea, Democratic People's Republic of (North Korea)", "PRK", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Korea, Republic of  (South Korea)", "KOR", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Kuwait", "KWT", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Kyrgyzstan", "KGZ", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Laos", "LAO", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Latvia", "LVA", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Lebanon", "LBN", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Lesotho", "LSO", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Liberia", "LBR", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Libya", "LBY", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Liechtenstein", "LIE", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Lithuania", "LTU", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Luxembourg", "LUX", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Macedonia", "MKD", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Madagascar", "MDG", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Malawi", "MWI", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Malaysia", "MYS", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Maldives", "MDV", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Mali", "MLI", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Malta", "MLT", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Marshall Islands", "MHL", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Mauritania", "MRT", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Mauritius", "MUS", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Mexico", "MEX", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Micronesia", "FSM", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Moldova", "MDA", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Monaco", "MCO", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Mongolia", "MNG", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Montenegro", "MNE", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Morocco", "MAR", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Mozambique", "MOZ", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Myanmar (Burma)", "MMR", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Namibia", "NAM", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Nauru", "NRU", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Nepal", "NPL", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Netherlands", "NLD", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "New Zealand", "NZL", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Nicaragua", "NIC", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Niger", "NER", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Nigeria", "NGA", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Norway", "NOR", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Oman", "OMN", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Pakistan", "PAK", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Palau", "PLW", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Panama", "PAN", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Papua New Guinea", "PNG", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Paraguay", "PRY", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Peru", "PER", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Philippines", "PHL", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Poland", "POL", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Portugal", "PRT", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Qatar", "QAT", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Romania", "ROU", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Russia", "RUS", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Rwanda", "RWA", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Saint Kitts and Nevis", "KNA", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Saint Lucia", "LCA", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Saint Vincent and the Grenadines", "VCT", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Samoa", "WSM", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "San Marino", "SMR", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Sao Tome and Principe", "STP", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Saudi Arabia", "SAU", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Senegal", "SEN", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Serbia", "SRB", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Seychelles", "SYC", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Sierra Leone", "SLE", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Singapore", "SGP", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Slovakia", "SVK", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Slovenia", "SVN", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Solomon Islands", "SLB", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Somalia", "SOM", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "South Africa", "ZAF", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Spain", "ESP", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Sri Lanka", "LKA", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Sudan", "SDN", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Suriname", "SUR", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Swaziland", "SWZ", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Sweden", "SWE", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Switzerland", "CHE", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Syria", "SYR", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Tajikistan", "TJK", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Tanzania", "TZA", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Thailand", "THA", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Timor-Leste (East Timor)", "TLS", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Togo", "TGO", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Tonga", "TON", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Trinidad and Tobago", "TTO", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Tunisia", "TUN", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Turkey", "TUR", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Turkmenistan", "TKM", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Tuvalu", "TUV", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Uganda", "UGA", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Ukraine", "UKR", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "United Arab Emirates", "ARE", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "United Kingdom", "GBR", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "United States", "USA", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Uruguay", "URY", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Uzbekistan", "UZB", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Vanuatu", "VUT", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Vatican City", "VAT", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Venezuela", "VEN", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Vietnam", "VNM", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Yemen", "YEM", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Zambia", "ZMB", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Zimbabwe", "ZWE", 1, 1, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Abkhazia", "GEO", 1, 6, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "China, Republic of (Taiwan)", "TWN", 1, 6, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Nagorno-Karabakh", "AZE", 1, 6, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Northern Cyprus", "CYP", 1, 6, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Pridnestrovie (Transnistria)", "MDA", 1, 6, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Somaliland", "SOM", 1, 6, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "South Ossetia", "GEO", 1, 6, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Ashmore and Cartier Islands", "AUS", 1, 3, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Christmas Island", "CXR", 1, 3, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Cocos (Keeling) Islands", "CCK", 1, 3, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Coral Sea Islands", "AUS", 1, 3, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Heard Island and McDonald Islands", "HMD", 1, 3, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Norfolk Island", "NFK", 1, 3, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "New Caledonia", "NCL", 1, 3, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "French Polynesia", "PYF", 1, 3, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Mayotte", "MYT", 1, 3, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Saint Barthelemy", "GLP", 1, 3, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Saint Martin", "GLP", 1, 3, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Saint Pierre and Miquelon", "SPM", 1, 3, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Wallis and Futuna", "WLF", 1, 3, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "French Southern and Antarctic Lands", "ATF", 1, 3, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Clipperton Island", "PYF", 1, 3, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Bouvet Island", "BVT", 1, 3, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Cook Islands", "COK", 1, 3, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Niue", "NIU", 1, 3, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Tokelau", "TKL", 1, 3, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Guernsey", "GGY", 1, 3, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Isle of Man", "IMN", 1, 3, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Jersey", "JEY", 1, 3, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Anguilla", "AIA", 1, 3, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Bermuda", "BMU", 1, 3, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "British Indian Ocean Territory", "IOT", 1, 3, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "British Sovereign Base Areas", "", 1, 3, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "British Virgin Islands", "VGB", 1, 3, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Cayman Islands", "CYM", 1, 3, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Falkland Islands (Islas Malvinas)", "FLK", 1, 3, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Gibraltar", "GIB", 1, 3, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Montserrat", "MSR", 1, 3, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Pitcairn Islands", "PCN", 1, 3, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Saint Helena", "SHN", 1, 3, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "South Georgia and the South Sandwich Islands", "SGS", 1, 3, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Turks and Caicos Islands", "TCA", 1, 3, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Northern Mariana Islands", "MNP", 1, 3, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Puerto Rico", "PRI", 1, 3, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "American Samoa", "ASM", 1, 3, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Baker Island", "UMI", 1, 3, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Guam", "GUM", 1, 3, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Howland Island", "UMI", 1, 3, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Jarvis Island", "UMI", 1, 3, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Johnston Atoll", "UMI", 1, 3, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Kingman Reef", "UMI", 1, 3, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Midway Islands", "UMI", 1, 3, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Navassa Island", "UMI", 1, 3, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Palmyra Atoll", "UMI", 1, 3, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "U.S. Virgin Islands", "VIR", 1, 3, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Wake Island", "UMI", 1, 3, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Hong Kong", "HKG", 1, 5, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Macau", "MAC", 1, 5, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Faroe Islands", "FRO", 1, 5, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Greenland", "GRL", 1, 5, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "French Guiana", "GUF", 1, 5, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Guadeloupe", "GLP", 1, 5, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Martinique", "MTQ", 1, 5, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Reunion", "REU", 1, 5, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Aland", "ALA", 1, 5, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Aruba", "ABW", 1, 5, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Netherlands Antilles", "ANT", 1, 5, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Svalbard", "SJM", 1, 5, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Ascension", "ASC", 1, 5, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Tristan da Cunha", "TAA", 1, 5, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Antarctica", "ATA", 1, 4, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Kosovo", "SCG", 1, 4, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Palestinian Territories (Gaza Strip and West Bank)", "PSE", 1, 4, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Western Sahara", "ESH", 1, 4, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Australian Antarctic Territory", "ATA", 1, 2, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Ross Dependency", "ATA", 1, 2, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Peter I Island", "ATA", 1, 2, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "Queen Maud Land", "ATA", 1, 2, 0, NULL);
-INSERT INTO %scountries (country_id, name, code, population, era_id, government_id, city_id, deleted_dt) VALUES (NULL, "British Antarctic Territory", "ATA", 1, 2, 0, NULL);
-
+INSERT INTO %scountries (
+  country_id, 
+  name, 
+  code, 
+  population, 
+  era_id, 
+  government_id, 
+  city_id, 
+  deleted_dt
+) VALUES 
+(NULL, "Afghanistan", "AFG", 1, 1, 0, NULL),
+(NULL, "Albania", "ALB", 1, 1, 0, NULL),
+(NULL, "Algeria", "DZA", 1, 1, 0, NULL),
+(NULL, "Andorra", "AND", 1, 1, 0, NULL),
+(NULL, "Angola", "AGO", 1, 1, 0, NULL),
+(NULL, "Antigua and Barbuda", "ATG", 1, 1, 0, NULL),
+(NULL, "Argentina", "ARG", 1, 1, 0, NULL),
+(NULL, "Armenia", "ARM", 1, 1, 0, NULL),
+(NULL, "Australia", "AUS", 1, 1, 0, NULL),
+(NULL, "Austria", "AUT", 1, 1, 0, NULL),
+(NULL, "Azerbaijan", "AZE", 1, 1, 0, NULL),
+(NULL, "Bahamas, The", "BHS", 1, 1, 0, NULL),
+(NULL, "Bahrain", "BHR", 1, 1, 0, NULL),
+(NULL, "Bangladesh", "BGD", 1, 1, 0, NULL),
+(NULL, "Barbados", "BRB", 1, 1, 0, NULL),
+(NULL, "Belarus", "BLR", 1, 1, 0, NULL),
+(NULL, "Belgium", "BEL", 1, 1, 0, NULL),
+(NULL, "Belize", "BLZ", 1, 1, 0, NULL),
+(NULL, "Benin", "BEN", 1, 1, 0, NULL),
+(NULL, "Bhutan", "BTN", 1, 1, 0, NULL),
+(NULL, "Bolivia", "BOL", 1, 1, 0, NULL),
+(NULL, "Bosnia and Herzegovina", "BIH", 1, 1, 0, NULL),
+(NULL, "Botswana", "BWA", 1, 1, 0, NULL),
+(NULL, "Brazil", "BRA", 1, 1, 0, NULL),
+(NULL, "Brunei", "BRN", 1, 1, 0, NULL),
+(NULL, "Bulgaria", "BGR", 1, 1, 0, NULL),
+(NULL, "Burkina Faso", "BFA", 1, 1, 0, NULL),
+(NULL, "Burundi", "BDI", 1, 1, 0, NULL),
+(NULL, "Cambodia", "KHM", 1, 1, 0, NULL),
+(NULL, "Cameroon", "CMR", 1, 1, 0, NULL),
+(NULL, "Canada", "CAN", 1, 1, 0, NULL),
+(NULL, "Cape Verde", "CPV", 1, 1, 0, NULL),
+(NULL, "Central African Republic", "CAF", 1, 1, 0, NULL),
+(NULL, "Chad", "TCD", 1, 1, 0, NULL),
+(NULL, "Chile", "CHL", 1, 1, 0, NULL),
+(NULL, "China, People's Republic of", "CHN", 1, 1, 0, NULL),
+(NULL, "Colombia", "COL", 1, 1, 0, NULL),
+(NULL, "Comoros", "COM", 1, 1, 0, NULL),
+(NULL, "Congo, Democratic Republic of the (Congo . Kinshasa)", "COD", 1, 1, 0, NULL),
+(NULL, "Congo, Republic of the (Congo . Brazzaville)", "COG", 1, 1, 0, NULL),
+(NULL, "Costa Rica", "CRI", 1, 1, 0, NULL),
+(NULL, "Cote d'Ivoire (Ivory Coast)", "CIV", 1, 1, 0, NULL),
+(NULL, "Croatia", "HRV", 1, 1, 0, NULL),
+(NULL, "Cuba", "CUB", 1, 1, 0, NULL),
+(NULL, "Cyprus", "CYP", 1, 1, 0, NULL),
+(NULL, "Czech Republic", "CZE", 1, 1, 0, NULL),
+(NULL, "Denmark", "DNK", 1, 1, 0, NULL),
+(NULL, "Djibouti", "DJI", 1, 1, 0, NULL),
+(NULL, "Dominica", "DMA", 1, 1, 0, NULL),
+(NULL, "Dominican Republic", "DOM", 1, 1, 0, NULL),
+(NULL, "Ecuador", "ECU", 1, 1, 0, NULL),
+(NULL, "Egypt", "EGY", 1, 1, 0, NULL),
+(NULL, "El Salvador", "SLV", 1, 1, 0, NULL),
+(NULL, "Equatorial Guinea", "GNQ", 1, 1, 0, NULL),
+(NULL, "Eritrea", "ERI", 1, 1, 0, NULL),
+(NULL, "Estonia", "EST", 1, 1, 0, NULL),
+(NULL, "Ethiopia", "ETH", 1, 1, 0, NULL),
+(NULL, "Fiji", "FJI", 1, 1, 0, NULL),
+(NULL, "Finland", "FIN", 1, 1, 0, NULL),
+(NULL, "France", "FRA", 1, 1, 0, NULL),
+(NULL, "Gabon", "GAB", 1, 1, 0, NULL),
+(NULL, "Gambia, The", "GMB", 1, 1, 0, NULL),
+(NULL, "Georgia", "GEO", 1, 1, 0, NULL),
+(NULL, "Germany", "DEU", 1, 1, 0, NULL),
+(NULL, "Ghana", "GHA", 1, 1, 0, NULL),
+(NULL, "Greece", "GRC", 1, 1, 0, NULL),
+(NULL, "Grenada", "GRD", 1, 1, 0, NULL),
+(NULL, "Guatemala", "GTM", 1, 1, 0, NULL),
+(NULL, "Guinea", "GIN", 1, 1, 0, NULL),
+(NULL, "Guinea-Bissau", "GNB", 1, 1, 0, NULL),
+(NULL, "Guyana", "GUY", 1, 1, 0, NULL),
+(NULL, "Haiti", "HTI", 1, 1, 0, NULL),
+(NULL, "Honduras", "HND", 1, 1, 0, NULL),
+(NULL, "Hungary", "HUN", 1, 1, 0, NULL),
+(NULL, "Iceland", "ISL", 1, 1, 0, NULL),
+(NULL, "India", "IND", 1, 1, 0, NULL),
+(NULL, "Indonesia", "IDN", 1, 1, 0, NULL),
+(NULL, "Iran", "IRN", 1, 1, 0, NULL),
+(NULL, "Iraq", "IRQ", 1, 1, 0, NULL),
+(NULL, "Ireland", "IRL", 1, 1, 0, NULL),
+(NULL, "Israel", "ISR", 1, 1, 0, NULL),
+(NULL, "Italy", "ITA", 1, 1, 0, NULL),
+(NULL, "Jamaica", "JAM", 1, 1, 0, NULL),
+(NULL, "Japan", "JPN", 1, 1, 0, NULL),
+(NULL, "Jordan", "JOR", 1, 1, 0, NULL),
+(NULL, "Kazakhstan", "KAZ", 1, 1, 0, NULL),
+(NULL, "Kenya", "KEN", 1, 1, 0, NULL),
+(NULL, "Kiribati", "KIR", 1, 1, 0, NULL),
+(NULL, "Korea, Democratic People's Republic of (North Korea)", "PRK", 1, 1, 0, NULL),
+(NULL, "Korea, Republic of  (South Korea)", "KOR", 1, 1, 0, NULL),
+(NULL, "Kuwait", "KWT", 1, 1, 0, NULL),
+(NULL, "Kyrgyzstan", "KGZ", 1, 1, 0, NULL),
+(NULL, "Laos", "LAO", 1, 1, 0, NULL),
+(NULL, "Latvia", "LVA", 1, 1, 0, NULL),
+(NULL, "Lebanon", "LBN", 1, 1, 0, NULL),
+(NULL, "Lesotho", "LSO", 1, 1, 0, NULL),
+(NULL, "Liberia", "LBR", 1, 1, 0, NULL),
+(NULL, "Libya", "LBY", 1, 1, 0, NULL),
+(NULL, "Liechtenstein", "LIE", 1, 1, 0, NULL),
+(NULL, "Lithuania", "LTU", 1, 1, 0, NULL),
+(NULL, "Luxembourg", "LUX", 1, 1, 0, NULL),
+(NULL, "Macedonia", "MKD", 1, 1, 0, NULL),
+(NULL, "Madagascar", "MDG", 1, 1, 0, NULL),
+(NULL, "Malawi", "MWI", 1, 1, 0, NULL),
+(NULL, "Malaysia", "MYS", 1, 1, 0, NULL),
+(NULL, "Maldives", "MDV", 1, 1, 0, NULL),
+(NULL, "Mali", "MLI", 1, 1, 0, NULL),
+(NULL, "Malta", "MLT", 1, 1, 0, NULL),
+(NULL, "Marshall Islands", "MHL", 1, 1, 0, NULL),
+(NULL, "Mauritania", "MRT", 1, 1, 0, NULL),
+(NULL, "Mauritius", "MUS", 1, 1, 0, NULL),
+(NULL, "Mexico", "MEX", 1, 1, 0, NULL),
+(NULL, "Micronesia", "FSM", 1, 1, 0, NULL),
+(NULL, "Moldova", "MDA", 1, 1, 0, NULL),
+(NULL, "Monaco", "MCO", 1, 1, 0, NULL),
+(NULL, "Mongolia", "MNG", 1, 1, 0, NULL),
+(NULL, "Montenegro", "MNE", 1, 1, 0, NULL),
+(NULL, "Morocco", "MAR", 1, 1, 0, NULL),
+(NULL, "Mozambique", "MOZ", 1, 1, 0, NULL),
+(NULL, "Myanmar (Burma)", "MMR", 1, 1, 0, NULL),
+(NULL, "Namibia", "NAM", 1, 1, 0, NULL),
+(NULL, "Nauru", "NRU", 1, 1, 0, NULL),
+(NULL, "Nepal", "NPL", 1, 1, 0, NULL),
+(NULL, "Netherlands", "NLD", 1, 1, 0, NULL),
+(NULL, "New Zealand", "NZL", 1, 1, 0, NULL),
+(NULL, "Nicaragua", "NIC", 1, 1, 0, NULL),
+(NULL, "Niger", "NER", 1, 1, 0, NULL),
+(NULL, "Nigeria", "NGA", 1, 1, 0, NULL),
+(NULL, "Norway", "NOR", 1, 1, 0, NULL),
+(NULL, "Oman", "OMN", 1, 1, 0, NULL),
+(NULL, "Pakistan", "PAK", 1, 1, 0, NULL),
+(NULL, "Palau", "PLW", 1, 1, 0, NULL),
+(NULL, "Panama", "PAN", 1, 1, 0, NULL),
+(NULL, "Papua New Guinea", "PNG", 1, 1, 0, NULL),
+(NULL, "Paraguay", "PRY", 1, 1, 0, NULL),
+(NULL, "Peru", "PER", 1, 1, 0, NULL),
+(NULL, "Philippines", "PHL", 1, 1, 0, NULL),
+(NULL, "Poland", "POL", 1, 1, 0, NULL),
+(NULL, "Portugal", "PRT", 1, 1, 0, NULL),
+(NULL, "Qatar", "QAT", 1, 1, 0, NULL),
+(NULL, "Romania", "ROU", 1, 1, 0, NULL),
+(NULL, "Russia", "RUS", 1, 1, 0, NULL),
+(NULL, "Rwanda", "RWA", 1, 1, 0, NULL),
+(NULL, "Saint Kitts and Nevis", "KNA", 1, 1, 0, NULL),
+(NULL, "Saint Lucia", "LCA", 1, 1, 0, NULL),
+(NULL, "Saint Vincent and the Grenadines", "VCT", 1, 1, 0, NULL),
+(NULL, "Samoa", "WSM", 1, 1, 0, NULL),
+(NULL, "San Marino", "SMR", 1, 1, 0, NULL),
+(NULL, "Sao Tome and Principe", "STP", 1, 1, 0, NULL),
+(NULL, "Saudi Arabia", "SAU", 1, 1, 0, NULL),
+(NULL, "Senegal", "SEN", 1, 1, 0, NULL),
+(NULL, "Serbia", "SRB", 1, 1, 0, NULL),
+(NULL, "Seychelles", "SYC", 1, 1, 0, NULL),
+(NULL, "Sierra Leone", "SLE", 1, 1, 0, NULL),
+(NULL, "Singapore", "SGP", 1, 1, 0, NULL),
+(NULL, "Slovakia", "SVK", 1, 1, 0, NULL),
+(NULL, "Slovenia", "SVN", 1, 1, 0, NULL),
+(NULL, "Solomon Islands", "SLB", 1, 1, 0, NULL),
+(NULL, "Somalia", "SOM", 1, 1, 0, NULL),
+(NULL, "South Africa", "ZAF", 1, 1, 0, NULL),
+(NULL, "Spain", "ESP", 1, 1, 0, NULL),
+(NULL, "Sri Lanka", "LKA", 1, 1, 0, NULL),
+(NULL, "Sudan", "SDN", 1, 1, 0, NULL),
+(NULL, "Suriname", "SUR", 1, 1, 0, NULL),
+(NULL, "Swaziland", "SWZ", 1, 1, 0, NULL),
+(NULL, "Sweden", "SWE", 1, 1, 0, NULL),
+(NULL, "Switzerland", "CHE", 1, 1, 0, NULL),
+(NULL, "Syria", "SYR", 1, 1, 0, NULL),
+(NULL, "Tajikistan", "TJK", 1, 1, 0, NULL),
+(NULL, "Tanzania", "TZA", 1, 1, 0, NULL),
+(NULL, "Thailand", "THA", 1, 1, 0, NULL),
+(NULL, "Timor-Leste (East Timor)", "TLS", 1, 1, 0, NULL),
+(NULL, "Togo", "TGO", 1, 1, 0, NULL),
+(NULL, "Tonga", "TON", 1, 1, 0, NULL),
+(NULL, "Trinidad and Tobago", "TTO", 1, 1, 0, NULL),
+(NULL, "Tunisia", "TUN", 1, 1, 0, NULL),
+(NULL, "Turkey", "TUR", 1, 1, 0, NULL),
+(NULL, "Turkmenistan", "TKM", 1, 1, 0, NULL),
+(NULL, "Tuvalu", "TUV", 1, 1, 0, NULL),
+(NULL, "Uganda", "UGA", 1, 1, 0, NULL),
+(NULL, "Ukraine", "UKR", 1, 1, 0, NULL),
+(NULL, "United Arab Emirates", "ARE", 1, 1, 0, NULL),
+(NULL, "United Kingdom", "GBR", 1, 1, 0, NULL),
+(NULL, "United States", "USA", 1, 1, 0, NULL),
+(NULL, "Uruguay", "URY", 1, 1, 0, NULL),
+(NULL, "Uzbekistan", "UZB", 1, 1, 0, NULL),
+(NULL, "Vanuatu", "VUT", 1, 1, 0, NULL),
+(NULL, "Vatican City", "VAT", 1, 1, 0, NULL),
+(NULL, "Venezuela", "VEN", 1, 1, 0, NULL),
+(NULL, "Vietnam", "VNM", 1, 1, 0, NULL),
+(NULL, "Yemen", "YEM", 1, 1, 0, NULL),
+(NULL, "Zambia", "ZMB", 1, 1, 0, NULL),
+(NULL, "Zimbabwe", "ZWE", 1, 1, 0, NULL),
+(NULL, "Abkhazia", "GEO", 1, 6, 0, NULL),
+(NULL, "China, Republic of (Taiwan)", "TWN", 1, 6, 0, NULL),
+(NULL, "Nagorno-Karabakh", "AZE", 1, 6, 0, NULL),
+(NULL, "Northern Cyprus", "CYP", 1, 6, 0, NULL),
+(NULL, "Pridnestrovie (Transnistria)", "MDA", 1, 6, 0, NULL),
+(NULL, "Somaliland", "SOM", 1, 6, 0, NULL),
+(NULL, "South Ossetia", "GEO", 1, 6, 0, NULL),
+(NULL, "Ashmore and Cartier Islands", "AUS", 1, 3, 0, NULL),
+(NULL, "Christmas Island", "CXR", 1, 3, 0, NULL),
+(NULL, "Cocos (Keeling) Islands", "CCK", 1, 3, 0, NULL),
+(NULL, "Coral Sea Islands", "AUS", 1, 3, 0, NULL),
+(NULL, "Heard Island and McDonald Islands", "HMD", 1, 3, 0, NULL),
+(NULL, "Norfolk Island", "NFK", 1, 3, 0, NULL),
+(NULL, "New Caledonia", "NCL", 1, 3, 0, NULL),
+(NULL, "French Polynesia", "PYF", 1, 3, 0, NULL),
+(NULL, "Mayotte", "MYT", 1, 3, 0, NULL),
+(NULL, "Saint Barthelemy", "GLP", 1, 3, 0, NULL),
+(NULL, "Saint Martin", "GLP", 1, 3, 0, NULL),
+(NULL, "Saint Pierre and Miquelon", "SPM", 1, 3, 0, NULL),
+(NULL, "Wallis and Futuna", "WLF", 1, 3, 0, NULL),
+(NULL, "French Southern and Antarctic Lands", "ATF", 1, 3, 0, NULL),
+(NULL, "Clipperton Island", "PYF", 1, 3, 0, NULL),
+(NULL, "Bouvet Island", "BVT", 1, 3, 0, NULL),
+(NULL, "Cook Islands", "COK", 1, 3, 0, NULL),
+(NULL, "Niue", "NIU", 1, 3, 0, NULL),
+(NULL, "Tokelau", "TKL", 1, 3, 0, NULL),
+(NULL, "Guernsey", "GGY", 1, 3, 0, NULL),
+(NULL, "Isle of Man", "IMN", 1, 3, 0, NULL),
+(NULL, "Jersey", "JEY", 1, 3, 0, NULL),
+(NULL, "Anguilla", "AIA", 1, 3, 0, NULL),
+(NULL, "Bermuda", "BMU", 1, 3, 0, NULL),
+(NULL, "British Indian Ocean Territory", "IOT", 1, 3, 0, NULL),
+(NULL, "British Sovereign Base Areas", "", 1, 3, 0, NULL),
+(NULL, "British Virgin Islands", "VGB", 1, 3, 0, NULL),
+(NULL, "Cayman Islands", "CYM", 1, 3, 0, NULL),
+(NULL, "Falkland Islands (Islas Malvinas)", "FLK", 1, 3, 0, NULL),
+(NULL, "Gibraltar", "GIB", 1, 3, 0, NULL),
+(NULL, "Montserrat", "MSR", 1, 3, 0, NULL),
+(NULL, "Pitcairn Islands", "PCN", 1, 3, 0, NULL),
+(NULL, "Saint Helena", "SHN", 1, 3, 0, NULL),
+(NULL, "South Georgia and the South Sandwich Islands", "SGS", 1, 3, 0, NULL),
+(NULL, "Turks and Caicos Islands", "TCA", 1, 3, 0, NULL),
+(NULL, "Northern Mariana Islands", "MNP", 1, 3, 0, NULL),
+(NULL, "Puerto Rico", "PRI", 1, 3, 0, NULL),
+(NULL, "American Samoa", "ASM", 1, 3, 0, NULL),
+(NULL, "Baker Island", "UMI", 1, 3, 0, NULL),
+(NULL, "Guam", "GUM", 1, 3, 0, NULL),
+(NULL, "Howland Island", "UMI", 1, 3, 0, NULL),
+(NULL, "Jarvis Island", "UMI", 1, 3, 0, NULL),
+(NULL, "Johnston Atoll", "UMI", 1, 3, 0, NULL),
+(NULL, "Kingman Reef", "UMI", 1, 3, 0, NULL),
+(NULL, "Midway Islands", "UMI", 1, 3, 0, NULL),
+(NULL, "Navassa Island", "UMI", 1, 3, 0, NULL),
+(NULL, "Palmyra Atoll", "UMI", 1, 3, 0, NULL),
+(NULL, "U.S. Virgin Islands", "VIR", 1, 3, 0, NULL),
+(NULL, "Wake Island", "UMI", 1, 3, 0, NULL),
+(NULL, "Hong Kong", "HKG", 1, 5, 0, NULL),
+(NULL, "Macau", "MAC", 1, 5, 0, NULL),
+(NULL, "Faroe Islands", "FRO", 1, 5, 0, NULL),
+(NULL, "Greenland", "GRL", 1, 5, 0, NULL),
+(NULL, "French Guiana", "GUF", 1, 5, 0, NULL),
+(NULL, "Guadeloupe", "GLP", 1, 5, 0, NULL),
+(NULL, "Martinique", "MTQ", 1, 5, 0, NULL),
+(NULL, "Reunion", "REU", 1, 5, 0, NULL),
+(NULL, "Aland", "ALA", 1, 5, 0, NULL),
+(NULL, "Aruba", "ABW", 1, 5, 0, NULL),
+(NULL, "Netherlands Antilles", "ANT", 1, 5, 0, NULL),
+(NULL, "Svalbard", "SJM", 1, 5, 0, NULL),
+(NULL, "Ascension", "ASC", 1, 5, 0, NULL),
+(NULL, "Tristan da Cunha", "TAA", 1, 5, 0, NULL),
+(NULL, "Antarctica", "ATA", 1, 4, 0, NULL),
+(NULL, "Kosovo", "SCG", 1, 4, 0, NULL),
+(NULL, "Palestinian Territories (Gaza Strip and West Bank)", "PSE", 1, 4, 0, NULL),
+(NULL, "Western Sahara", "ESH", 1, 4, 0, NULL),
+(NULL, "Australian Antarctic Territory", "ATA", 1, 2, 0, NULL),
+(NULL, "Ross Dependency", "ATA", 1, 2, 0, NULL),
+(NULL, "Peter I Island", "ATA", 1, 2, 0, NULL),
+(NULL, "Queen Maud Land", "ATA", 1, 2, 0, NULL),
+(NULL, "British Antarctic Territory", "ATA", 1, 2, 0, NULL);

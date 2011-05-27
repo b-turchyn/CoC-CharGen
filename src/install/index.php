@@ -45,7 +45,13 @@ function bufferflush (){
 	body {background:#8CA2D5;font-family: Verdana;font-size:10px;margin: 0;padding: 0;}
 	.header {width: 100%; margin: 0; padding: 0;border: 0; background: #5D75AB;}
 	.header h1 {text-align:right;margin: 0 0 25px 0;padding:25px;}
-	.container {margin: auto; width: 400px;padding: 10px;background:#A0B0D5;position:relative;}
+        .container {margin: auto; width: 400px;padding: 10px;background:#A0B0D5;position:relative;
+                -moz-border-radius: 20px;
+                -webkit-border-radius: 20px;
+                -khtml-border-radius: 20px;
+                border-radius: 20px;
+                behaviour: url(border-radius.htc);
+                border: 1px solid #EEF;}
 	.label {width: 200px;text-align: right;float:left;height:20px;vertical-align:bottom;padding-top:5px;}
 	.input {width: 200px;text-align: left; float:left;height:25px;}
 	.status {text-align:center;font-size: 12px;}

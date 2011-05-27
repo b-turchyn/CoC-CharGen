@@ -60,7 +60,18 @@ function bufferflush (){
 	<div class="container">
 <?php
 
-if(isset($_POST['coc_install'])) {
+if(file_exists("install.lock")) {
+	?>
+		<p class="status failed">The installer has been locked. Remove install.lock to reinstall.</p>
+	<?php
+}
+elseif(file_exists("../config.php")) {
+	?>
+	<p class="status failed">The configuration file currently exists. Remove the configuration file to continue.</p>
+	<?php
+}
+
+elseif(isset($_POST['coc_install'])) {
 	$sql = new SQLiInstall($_POST['coc_host'], $_POST['coc_user'], $_POST['coc_password'], $_POST['coc_database'], $_POST['coc_prefix']);
 	echo "Successfully connected to " . $sql->host_info . "<br />";
 	
@@ -72,11 +83,14 @@ if(isset($_POST['coc_install'])) {
 	// Iterate through each file
 	foreach($files as $key => $value) {
 		if(preg_match("/.sql$/", $value)) {
+			// Output the current query being run, and flush the buffer
 			echo preg_replace("/.sql$/", "", $value) . " ==> ";
 			bufferflush();
 			
+			// Run the query
 			$res = $sql->runQueryFromFile($value);
 			
+			// Display the result
 			if($res == null) {
 				echo "<span style=\"color: green\">Passed</span><br />\n";
 			} else {
@@ -86,6 +100,16 @@ if(isset($_POST['coc_install'])) {
 		}
 	}
 	
+	// Only write the config and lock the installer if we've succeeded
+	if(!$failed) {
+		// TODO: Write the configuration file out
+		touch("../config.php");
+	
+		// Lock the installer
+		touch("install.lock");
+	}
+	
+	// Display the overall result
 	if(!$failed) {
 		echo "<p class='status success'>Completed successfully!</p>";
 	} else {

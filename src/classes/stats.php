@@ -18,6 +18,37 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  ************************************************************************/
 
+// Abbreviations for stats
+define("STRab",  "STR");  // Strength
+define("CONab",  "CON");  // Constitution
+define("SIZab",  "SIZ");  // Size
+define("DEXab",  "DEX");  // Dexterity
+define("APPab",  "APP");  // Appearance
+define("SANab",  "SAN");  // Sanity
+define("INTab",  "INT");  // Intelligence
+define("POWab",  "POW");  // Power
+define("EDUab",  "EDU");  // Education
+define("IDEAab", "IDEA"); // Idea
+define("LUKab",  "LUK");  // Luck
+define("KNOWab", "KNOW"); // Knowedge
+define("HPab",   "HP");   // Knowedge
+
+// Full strings for stats
+define("STRf",  "Strength");     // Strength
+define("CONf",  "Constitution"); // Constitution
+define("SIZf",  "Size");         // Size
+define("DEXf",  "Dexterity");    // Dexterity
+define("APPf",  "Appearance");   // Appearance
+define("SANf",  "Sanity");       // Sanity
+define("INTf",  "Intelligence"); // Intelligence
+define("POWf",  "Power");        // Power
+define("EDUf",  "Education");    // Education
+define("IDEAf", "Idea");         // Idea
+define("LUKf",  "Luck");         // Luck
+define("KNOWf", "Knowledge");    // Knowedge
+define("HPf",   "Hit Points");   // Knowedge
+
+
 require_once(dirname(__FILE__) . '/dice.php');
 /**
  * StatGenerator class
@@ -229,8 +260,31 @@ class StatGenerator {
    */
   public function getHP() {
     return ($this->loaded ?
-            ($this->strPool->getResult() + $this->sizPool->getResult() ) / 2
+            (int)(($this->strPool->getResult() + $this->sizPool->getResult() ) / 2)
             : false);
+  }
+
+  /**
+   * Generates a quick, rough output
+   */
+  public function toString() {
+    $res = "";
+
+    $res .= STRab . $this->getSTR() . "\n";
+    $res .= DEXab . $this->getDEX() . "\n";
+    $res .= INTab . $this->getINT() . "\n";
+    $res .= IDEAab . $this->getIDEA() . "<br />\n";
+    $res .= CONab . $this->getSTR() . "\n";
+    $res .= APPab . $this->getAPP() . "\n";
+    $res .= POWab . $this->getPOW() . "\n";
+    $res .= LUKab . $this->getLUK() . "<br />\n";
+    $res .= SIZab . $this->getSIZ() . "\n";
+    $res .= SANab . $this->getSAN() . "\n";
+    $res .= EDUab . $this->getEDU() . "\n";
+    $res .= KNOWab . $this->getKNOW() . "<br />\n";
+    $res .= HPab . $this->getHP() . "<br />\n";
+
+    return $res;
   }
 }
 ?>

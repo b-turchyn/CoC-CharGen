@@ -18,7 +18,25 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  ************************************************************************/
 
-require_once 'classes/sql.php';
+define("CONFIG_FILE","config.php");
+define("CLSPATH", "classes/");
+
+if(!file_exists(CONFIG_FILE)) {
+  die("Config file does not exist. Run the installer first!");
+}
+
+require_once CONFIG_FILE;
+require_once CLSPATH.'backgrounds.php';
+require_once CLSPATH.'dice.php';
+require_once CLSPATH.'names.php';
+require_once CLSPATH.'occupations.php';
+require_once CLSPATH.'stats.php';
+require_once CLSPATH.'sql.php';
 
 $sql = new MySQLQueries("localhost", "bturchyn_chargen", "dummypass", "bturchyn_chargen");
+
+$stats = new StatGenerator();
+$stats->roll();
+echo $stats->toString();
+
 ?>

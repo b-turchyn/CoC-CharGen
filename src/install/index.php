@@ -33,7 +33,13 @@ if(isset($_POST['coc_install'])) {
 	// Iterate through each file
 	foreach($files as $key => $value) {
 		if(preg_match("/.sql$/", $value)) {
-			print_r($sql->runQueryFromFile($value));
+			$res = $sql->runQueryFromFile($value);
+			echo preg_replace("/.sql$/", "", $value) . " ==> ";
+			if(is_array($res) && $res[0] == 0) {
+				echo "<span style=\"color: green\">Passed</span><br />\n";
+			} else {
+				echo "<span style=\"color: red\">FAILED</span><br />\n";
+			}
 		}
 	}
 	

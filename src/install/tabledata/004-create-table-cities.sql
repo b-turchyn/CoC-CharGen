@@ -6,9 +6,6 @@ CREATE TABLE IF NOT EXISTS %scities (
 	`deleted_dt` TIMESTAMP NULL DEFAULT NULL,
 	INDEX (
 		`country_id`
-	),
-	UNIQUE (
-		`name`
 	)
 )
 ENGINE = MyISAM

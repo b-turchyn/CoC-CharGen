@@ -42,6 +42,39 @@ class FileIO {
 		// We're done
 		return $result;
 	}
+	
+	/**
+	 * Binary-safe file writing. Rough anti-folder-traversal protection built-in
+	 *
+	 * @param string $filename 
+	 * @return boolean false on failure, true on success
+	 * @author Brian Turchyn
+	 */
+	public static function putFile($filename, $contents, $binary = false) {
+		$handle = null;
+		$result = false;
+		
+		// Make sure no directory recursing
+		if(!preg_match("/\.\./", $filename)) {
+			// Can we touch the file?
+			if ( @touch($filename) ) {
+				// Attempt to open the file; no reading required. 
+				if ( $binary )
+					$handle = @fopen($filename, "wb");
+				else
+					$handle = @fopen($filename, "w");
+				
+				// If we're in, attempt to write the contents
+				if ( $handle ) {
+					$result = @fwrite($handle, $contents);
+					if ( $result !== false )
+						$result = true;
+				}
+			}
+		}
+		
+		return $result;
+	}
 }
 
 ?>

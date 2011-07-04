@@ -23,6 +23,9 @@ ini_set('display_errors','Off');
 
 require_once 'classes/sqli.php';
 
+define('CFG_FILE', "../config.php");
+define('INS_LOCK', "install.lock");
+
 function bufferflush (){
     echo(str_repeat(' ',256));
     // check that buffer is actually set before flushing
@@ -66,17 +69,28 @@ function bufferflush (){
 	<div class="container">
 <?php
 
-if(file_exists("install.lock")) {
+if(file_exists(INS_LOCK)) {
 	?>
 		<p class="status failed">The installer has been locked. Remove install.lock to reinstall.</p>
 	<?php
 }
-elseif(file_exists("../config.php")) {
+elseif(file_exists(CFG_FILE)) {
 	?>
 	<p class="status failed">The configuration file currently exists. Remove the configuration file to continue.</p>
 	<?php
 }
-
+// Check if we'll be able to write the config file
+elseif(!file_exists(CFG_FILE) && !(touch(CFG_FILE) && unlink(CFG_FILE))) {
+	?>
+	<p class="status failed">Unable to write the config file. Check folder permissions.</p>
+	<?php
+}
+// Check if we'll be able to write the install lock
+elseif(!file_exists(INS_LOCK) && !(touch(INS_LOCK) && unlink(INS_LOCK))) {
+	?>
+	<p class="status failed">Unable to write the installer lock. Check folder permissions.</p>
+	<?php
+}
 elseif(isset($_POST['coc_install'])) {
 	$sql = new SQLiInstall($_POST['coc_host'], $_POST['coc_user'], $_POST['coc_password'], $_POST['coc_database'], $_POST['coc_prefix']);
 	echo "Successfully connected to " . $sql->host_info . "<br />";
@@ -109,10 +123,10 @@ elseif(isset($_POST['coc_install'])) {
 	// Only write the config and lock the installer if we've succeeded
 	if(!$failed) {
 		// TODO: Write the configuration file out
-		touch("../config.php");
+		echo (touch(CFG_FILE) ? "Config created" : "Config creation failed!");
 	
 		// Lock the installer
-		touch("install.lock");
+		echo (touch(INS_LOCK) ? "Lock created" : "Lock creation failed!");
 	}
 	
 	// Display the overall result

@@ -35,7 +35,7 @@ echo
 for f in *.sql
 do
   echo "Generating SHA1 checksum for $f..."
-  sha1 -q $f > $f.sha1
+  shasum  $f > $f.sha1
 done
 
 echo

@@ -18,7 +18,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  ************************************************************************/
 
-class MySQLQueries {
+class MySQLQueries extends mysqli {
   // Private instance variables
   private $conn = null; // Connection holder
   private $prefix = "";  // Database table prefixes
@@ -29,57 +29,134 @@ class MySQLQueries {
 
   // Count number of first names
   const getFirstNameCount = 
-    "SELECT COUNT(*) FROM ?names 
-     WHERE isfirstname_sw = true
-    AND era = ?
-    AND ( gender = ? OR gender = ? )
-    AND deleted_dt IS NOT NULL";
+    "SELECT COUNT(*) FROM %snames 
+     WHERE isfirst = true
+    AND gender = ?
+    AND deleted_dt IS NULL";
 
   // Count number of last names
   const getLastNameCount = 
-    "SELECT COUNT(*) FROM ?names 
-    WHERE isfirstname_sw = false 
-    AND era = ?
-    AND ( gender = ? OR gender = ? )
-    AND deleted_dt IS NOT NULL";
+    "SELECT COUNT(*) FROM %snames 
+    WHERE isfirst = false 
+    AND deleted_dt IS NULL";
 
-  // Retrieve first and last name from a random index
-  const getFullName = 
-    "SELECT name FROM ?names 
-    WHERE isfirstname_sw = true 
-    LIMIT ?, 1 
-    UNION SELECT name FROM ?names 
-    WHERE isfirstname_sw = false 
-    LIMIT ?, 1";
+	// Retrieves a specific first name
+	const getFirstName = 
+		"SELECT name FROM %snames
+		WHERE isfirst = true
+		AND gender = ?
+		LIMIT ?, 1";
+	
+	// Retrieves a specific last name
+	const getLastName = 
+		"SELECT name FROM %snames
+		WHERE isfirst = false
+		LIMIT ?, 1";
 
-  function __construct($server, $user, $password, $database) {
-    $this->conn = new mysqli($server, $user, $password, $database);
-
-    // Check for error
-    if(mysqli_connect_errno()) {
-      printf("Connect failed: %s\n", mysqli_connect_error());
+  public function __construct($host, $user, $pass, $database, $prefix) {
+		
+		$this->prefix = $prefix;
+		
+    parent::__construct($host, $user, $pass, $database);
+    // Check for errors
+    if(mysqli_connect_error()) {
+      die("Connection error (" . mysqli_connect_errno() . ") " . mysqli_connect_error());
     }
-    //echo $this->conn;
   }
 
-  function __destruct() {
-    if($this->conn != null)
-      $this->conn->close();
-  }
+  public function __destruct() {
+		mysqli_close($this);
+	}
 
-  public function getFirstNameCount($era, $gender) {
+  public function getFirstNameCount($gender) {
     $result = false;
-    if( $stmt = $this->conn->prepare(self::getFirstNameCount) ) {
-      $stmt->bind_param("siss", $this->prefix, $era, $gender, 'B');
+		$stmt = null;
+    if( $stmt = $this->prepare($this->preparePrefix(self::getFirstNameCount) ) ) {
+			$both = 'B';
+      $stmt->bind_param("s", $gender);
       $stmt->execute();
       // Retrieve the result, and return false on failure.
       $stmt->bind_result($res);
       if ( $stmt->fetch() ) {
         $result = $res;
       }
-    }
+    } else echo $this->error;
+
+		$stmt->close();
 
     return $result;
   }
+
+	public function getLastNameCount() {
+    $result = false;
+		$stmt = null;
+    if( $stmt = $this->prepare($this->preparePrefix(self::getLastNameCount) ) ) {
+      //$stmt->bind_param("ss", $gender, $both);
+      $stmt->execute();
+      // Retrieve the result, and return false on failure.
+      $stmt->bind_result($res);
+      if ( $stmt->fetch() ) {
+        $result = $res;
+      }
+    } else echo $this->error;
+
+		$stmt->close();
+
+    return $result;
+  }
+
+	public function getFirstName($gender, $index = null) {
+		$result = false;
+		$stmt = null;
+
+		// Check input. If no indexes for first name is given, generate a random value
+		if ( $index == null ) {
+			$index = mt_rand(1, $this->getFirstNameCount($gender));
+		}
+    if( $stmt = $this->prepare($this->preparePrefix(self::getFirstName) ) ) {
+      $stmt->bind_param("si", $gender, $index);
+      $stmt->execute();
+      // Retrieve the result, and return false on failure.
+      $stmt->bind_result($res);
+      if ( $stmt->fetch() ) {
+        $result = $res;
+      }
+    } else echo $this->error;
+
+		$stmt->close();
+
+	  return $result;
+	}
+	
+	public function getLastName($index = null) {
+		$result = false;
+		$stmt = null;
+
+		// Check input. If no index for last name is given, generate a random value
+		if ( $index == null ) {
+			$index = mt_rand(1, $this->getLastNameCount());
+		}
+    if( $stmt = $this->prepare($this->preparePrefix(self::getLastName) ) ) {
+      $stmt->bind_param("i", $index);
+      $stmt->execute();
+      // Retrieve the result, and return false on failure.
+      $stmt->bind_result($res);
+      if ( $stmt->fetch() ) {
+        $result = $res;
+      }
+    } else echo $this->error;
+
+		$stmt->close();
+
+	  return $result;
+	}
+
+	public function getFullName($gender, $first = null, $last = null) {
+    return $this->getFirstName($gender, $first) . " " . $this->getLastName($last);
+  }
+
+	private function preparePrefix($query) {
+		return preg_replace("/%s/", $this->prefix, $query);
+	}
 }
 ?>

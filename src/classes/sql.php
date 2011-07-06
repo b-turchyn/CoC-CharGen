@@ -68,6 +68,13 @@ class MySQLQueries extends mysqli {
 		mysqli_close($this);
 	}
 
+	/**
+	 * Retrieves the number of first names of a particular gender in the database
+	 *
+	 * @param string $gender 'M' or 'F' (case-sensitive)
+	 * @return integer >= 0 on success, false on failure
+	 * @author Brian Turchyn
+	 */
   public function getFirstNameCount($gender) {
     $result = false;
 		$stmt = null;
@@ -87,6 +94,12 @@ class MySQLQueries extends mysqli {
     return $result;
   }
 
+	/**
+	 * Retrieves the number of last names in the database
+	 *
+	 * @return integer >= 0 on success, false on failure
+	 * @author Brian Turchyn
+	 */
 	public function getLastNameCount() {
     $result = false;
 		$stmt = null;
@@ -105,6 +118,14 @@ class MySQLQueries extends mysqli {
     return $result;
   }
 
+	/**
+	 * Retrieves a specific first name from the database
+	 *
+	 * @param char $gender Either 'M' or 'F' (case-sensitive)
+	 * @param integer $index Optional specific index
+	 * @return string on success, boolean false on failure
+	 * @author Brian Turchyn
+	 */
 	public function getFirstName($gender, $index = null) {
 		$result = false;
 		$stmt = null;
@@ -128,6 +149,13 @@ class MySQLQueries extends mysqli {
 	  return $result;
 	}
 	
+	/**
+	 * Retrieves a specific last name from the database
+	 *
+	 * @param integer $index 
+	 * @return string on success, boolean false on failure
+	 * @author Brian Turchyn
+	 */
 	public function getLastName($index = null) {
 		$result = false;
 		$stmt = null;
@@ -151,10 +179,26 @@ class MySQLQueries extends mysqli {
 	  return $result;
 	}
 
+	/**
+	 * Generates a full name, either a specific index or a random one
+	 *
+	 * @param char $gender Either 'M' or 'F' (case-sensitive)
+	 * @param integer $first optional first name index
+	 * @param integer $last optional last name index
+	 * @return string on success, false on failure
+	 * @author Brian Turchyn
+	 */
 	public function getFullName($gender, $first = null, $last = null) {
     return $this->getFirstName($gender, $first) . " " . $this->getLastName($last);
   }
 
+	/**
+	 * Prepares the query to populate the DB table prefixes
+	 *
+	 * @param string $query 
+	 * @return string query with the database prefix
+	 * @author Brian Turchyn
+	 */
 	private function preparePrefix($query) {
 		return preg_replace("/%s/", $this->prefix, $query);
 	}

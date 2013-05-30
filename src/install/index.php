@@ -36,59 +36,45 @@ function bufferflush (){
     }    
     @ob_start();
 }
-?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-
-	<title>CoC Chargen Installer</title>
-	<style type='text/css'>
-	body {background:#8CA2D5;font-family: Verdana;font-size:10px;margin: 0;padding: 0;}
-	.header {width: 100%; margin: 0; padding: 0;border: 0; background: #5D75AB;}
-	.header h1 {text-align:right;margin: 0 0 25px 0;padding:25px;}
-        .container {margin: auto; width: 400px;padding: 10px;background:#A0B0D5;position:relative;
-                -moz-border-radius: 20px;
-                -webkit-border-radius: 20px;
-                -khtml-border-radius: 20px;
-                border-radius: 20px;
-                behaviour: url(border-radius.htc);
-                border: 1px solid #EEF;}
-	.label {width: 200px;text-align: right;float:left;height:20px;vertical-align:bottom;padding-top:5px;}
-	.input {width: 200px;text-align: left; float:left;height:25px;}
-	.status {text-align:center;font-size: 12px;}
-	.success {color: green;}
-	.failure {color: red;}
-	</style>
-	
-</head>
-
-<body>
-	<div class="header"><h1>CoC Chargen Installer</h1></div>
-	<div class="container">
+?><?php include '../ui/header.php'; ?>
+      <div class="masthead">
+        <h3>Call of Cthulhu Character Generator</h3>
+      </div>
+      <hr>
+      <div class="jumbotron">
+        <h1>Installer</h1>
+      </div>
 <?php
 
-if(file_exists(INS_LOCK)) {
-	?>
-		<p class="status failed">The installer has been locked. Remove install.lock to reinstall.</p>
+if ( file_exists ( INS_LOCK ) )
+{
+        ?>
+      <div class="alert alert-error">
+        The installer has been locked. Remove install.lock to reinstall.
+      </div>
 	<?php
 }
 elseif(file_exists(CFG_FILE)) {
 	?>
-	<p class="status failed">The configuration file currently exists. Remove the configuration file to continue.</p>
+      <div class="alert alert-error">
+	The configuration file currently exists. Remove the configuration file to continue.
+      </div>
 	<?php
 }
 // Check if we'll be able to write the config file
 elseif(!file_exists(CFG_FILE) && !(touch(CFG_FILE) && unlink(CFG_FILE))) {
 	?>
-	<p class="status failed">Unable to write the config file. Check folder permissions.</p>
+      <div class="alert alert-error">
+	Unable to write the config file. Check folder permissions.
+      </div>
 	<?php
 }
 // Check if we'll be able to write the install lock
 elseif(!file_exists(INS_LOCK) && !(touch(INS_LOCK) && unlink(INS_LOCK))) {
 	?>
-	<p class="status failed">Unable to write the installer lock. Check folder permissions.</p>
+      <div class="alert alert-error">
+	Unable to write the installer lock. Check folder permissions.
+      </div>
 	<?php
 }
 elseif(isset($_POST['coc_install'])) {
@@ -139,16 +125,21 @@ elseif(isset($_POST['coc_install'])) {
 } else {
 	?>
 	<form method='POST'>
-		<div class='label'><label for='coc_host'>Database host:</label></div> <div class='input'><input type="text" name="coc_host" /></div>
-		<div class='label'><label for='coc_user'>Database username:</label></div> <div class='input'><input type="text" name="coc_user" /></div>
-		<div class='label'><label for='coc_password'>Database password:</label></div> <div class='input'><input type="text" name="coc_password" /></div>
-		<div class='label'><label for='coc_database'>Database name:</label></div> <div class='input'><input type="text" name="coc_database" /></div>
-		<div class='label'><label for='coc_prefix'>Table prefix:</label></div> <div class='input'><input type="text" name="coc_prefix" /></div>
-		<div style='text-align:center'><input type="submit" name="coc_install" value="Install Database" /></div>
+          <fieldset>
+            <legend>Database Options</legend>
+            <label for="coc_host">Server host name</label>
+            <input type="text" id="coc_host" name="coc_host">
+            <label for="coc_user">Database username</label>
+            <input type="text" id="coc_user" name="coc_user">
+            <label for="coc_password">Database password</label>
+            <input type="text" id="coc_password" name="coc_password">
+            <label for="coc_database">Database name</label>
+            <input type="text" id="coc_database" name="coc_database">
+            <label for="coc_prefix">Table prefix</label>
+            <input type="text" id="coc_prefix" name="coc_prefix">
+          </fieldset>
+          <button type="submit" class="btn" name="coc_install" value="Install">Install</button>
 	</form>
-	<?php
+      <?php
 }
-?>
-	</div>
-</body>
-</html>
+?><?php include '../ui/footer.php'; ?>

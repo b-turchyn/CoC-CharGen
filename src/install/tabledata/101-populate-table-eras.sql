@@ -1,25 +1,15 @@
 INSERT INTO %seras (
-  `era_id`,
-  `era_name`,
-  `deleted_dt`
+  `era_name`
 )
 VALUES (
-  NULL,
-  '1890s',
-  NULL
+  '1890s'
 ),
 (
-  NULL,
-  '1920s',
-  NULL
+  '1920s'
 ),
 (
-  NULL,
-  '1990s',
-  NULL
+  '1990s'
 ),
 (
-  NULL,
-  'Delta Green',
-  NULL
+  'Delta Green'
 );

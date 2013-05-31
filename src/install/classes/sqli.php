@@ -38,7 +38,7 @@ class SQLiInstall extends mysqli{
     parent::__construct($host, $user, $pass, $database);
     // Check for errors
     if(mysqli_connect_error()) {
-      die("Connection error (" . mysqli_connect_errno() . ") " . mysqli_connect_error());
+      die("<div class=\"alert alert-error\">Connection error (" . mysqli_connect_errno() . ") " . mysqli_connect_error() . "</div>");
     }
   }
 

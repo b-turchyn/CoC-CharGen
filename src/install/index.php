@@ -26,15 +26,17 @@ require_once 'classes/sqli.php';
 define('CFG_FILE', "../config.php");
 define('INS_LOCK', "install.lock");
 
-function bufferflush (){
-    echo(str_repeat(' ',256));
-    // check that buffer is actually set before flushing
-    if (ob_get_length()){            
-        @ob_flush();
-        @flush();
-        @ob_end_flush();
-    }    
-    @ob_start();
+function bufferflush ( )
+{
+  echo ( str_repeat ( ' ', 256 ) );
+  // check that buffer is actually set before flushing
+  if ( ob_get_length ( ) )
+  {            
+    @ob_flush( );
+    @flush( );
+    @ob_end_flush( );
+  }    
+  @ob_start( );
 }
 ?><?php include '../ui/header.php'; ?>
       <div class="masthead">
@@ -45,100 +47,149 @@ function bufferflush (){
         <h1>Installer</h1>
       </div>
 <?php
-
 if ( file_exists ( INS_LOCK ) )
 {
-        ?>
+  ?>
       <div class="alert alert-error">
         The installer has been locked. Remove install.lock to reinstall.
       </div>
-	<?php
+  <?php
 }
-elseif(file_exists(CFG_FILE)) {
-	?>
+elseif ( file_exists ( CFG_FILE ) )
+{
+  ?>
       <div class="alert alert-error">
 	The configuration file currently exists. Remove the configuration file to continue.
       </div>
-	<?php
+  <?php
 }
 // Check if we'll be able to write the config file
-elseif(!file_exists(CFG_FILE) && !(touch(CFG_FILE) && unlink(CFG_FILE))) {
-	?>
+elseif ( !file_exists ( CFG_FILE ) && !( touch ( CFG_FILE ) && unlink ( CFG_FILE ) ) )
+{
+  ?>
       <div class="alert alert-error">
 	Unable to write the config file. Check folder permissions.
       </div>
-	<?php
+  <?php
 }
 // Check if we'll be able to write the install lock
-elseif(!file_exists(INS_LOCK) && !(touch(INS_LOCK) && unlink(INS_LOCK))) {
-	?>
+elseif ( !file_exists ( INS_LOCK ) && !( touch ( INS_LOCK ) && unlink ( INS_LOCK ) ) )
+{
+  ?>
       <div class="alert alert-error">
 	Unable to write the installer lock. Check folder permissions.
       </div>
-	<?php
+  <?php
 }
-elseif(isset($_POST['coc_install'])) {
-	$sql = new SQLiInstall($_POST['coc_host'], $_POST['coc_user'], $_POST['coc_password'], $_POST['coc_database'], $_POST['coc_prefix']);
-	echo "Successfully connected to " . $sql->host_info . "<br />";
+elseif ( isset ( $_POST[ 'coc_install' ] ) )
+{
+  $sql = new SQLiInstall(
+    $_POST['coc_host'],
+    $_POST['coc_user'],
+    $_POST['coc_password'],
+    $_POST['coc_database'],
+    $_POST['coc_prefix']
+  );
+  echo "<div class=\"alert alert-info\">Successfully connected to " . $sql->host_info . "</div>";
 	
-	$failed = false;
+  $failed = false;
 	
-	// Get the SQL files
-	$dir = 'tabledata';
-	$files = scandir($dir, 0);
-	// Iterate through each file
-	foreach($files as $key => $value) {
-		if(preg_match("/.sql$/", $value)) {
-			// Output the current query being run, and flush the buffer
-			echo preg_replace("/.sql$/", "", $value) . " ==> ";
-			bufferflush();
+  // Get the SQL files
+  $dir = 'tabledata';
+  $files = scandir($dir, 0);
+
+  echo "<table class=\"table table-striped table-bordered table-condensed\">";
+  echo "<tr><th>File</th><th class=\"table-result\">Result</th></tr>\n";
+  // Iterate through each file
+  foreach ( $files as $key => $value )
+  {
+    if ( preg_match ( "/.sql$/", $value ) )
+    {
+      // Output the current query being run, and flush the buffer
+      echo "<tr><td>" . preg_replace ( "/.sql$/", "", $value ) . "</td><td class=\"table-result\">";
+      bufferflush();
 			
-			// Run the query
-			$res = $sql->runQueryFromFile($value);
+      // Run the query
+      $res = $sql->runQueryFromFile( $value );
 			
-			// Display the result
-			if($res == null) {
-				echo "<span style=\"color: green\">Passed</span><br />\n";
-			} else {
-				echo "<span style=\"color: red\">FAILED</span><br />\n";
-				$failed = true;
-			}
-		}
-	}
+      // Display the result
+      if ( $res == null )
+      {
+	echo "<span class=\"label label-success\"><i class=\"icon icon-ok\"></i></span>\n";
+      }
+      else
+      {
+	echo "<span class=\"label label-important\"><i class=\"icon icon-remove\"></i></span>\n";
+	$failed = true;
+      }
+      echo "</td></tr>\n";
+    }
+  }
+  echo "</table>\n";
 	
-	// Only write the config and lock the installer if we've succeeded
-	if(!$failed) {
-		// TODO: Write the configuration file out
-		echo (touch(CFG_FILE) ? "Config created" : "Config creation failed!");
+  // Only write the config and lock the installer if we've succeeded
+  if ( !$failed )
+  {
+    // TODO: Write the configuration file out
+    echo ( touch ( CFG_FILE ) ? "Config created" : "Config creation failed!" );
 	
-		// Lock the installer
-		echo (touch(INS_LOCK) ? "Lock created" : "Lock creation failed!");
-	}
+    // Lock the installer
+    echo ( touch ( INS_LOCK ) ? "Lock created" : "Lock creation failed!" );
+  }
 	
-	// Display the overall result
-	if(!$failed) {
-		echo "<p class='status success'>Completed successfully!</p>";
-	} else {
-		echo "<p class='status failed'>One or more install queries failed. Your installation of CoC Chargen may not function properly!</p>";
-	}
+  // Display the overall result
+  if ( !$failed )
+  {
+    echo "<div class='alert alert-success'>Completed successfully!</div>";
+  }
+  else
+  {
+    echo "<div class='alert alert-error'>One or more install queries failed. Your installation of CoC Chargen may not function properly!</div>";
+  }
 	
-} else {
-	?>
-	<form method='POST'>
+}
+else
+{
+  ?>
+	<form method='POST' class="form-horizontal">
           <fieldset>
             <legend>Database Options</legend>
-            <label for="coc_host">Server host name</label>
-            <input type="text" id="coc_host" name="coc_host">
-            <label for="coc_user">Database username</label>
-            <input type="text" id="coc_user" name="coc_user">
-            <label for="coc_password">Database password</label>
-            <input type="text" id="coc_password" name="coc_password">
-            <label for="coc_database">Database name</label>
-            <input type="text" id="coc_database" name="coc_database">
-            <label for="coc_prefix">Table prefix</label>
-            <input type="text" id="coc_prefix" name="coc_prefix">
+            <div class="control-group">
+              <label class="control-label" for="coc_host">Server host name</label>
+              <div class="controls">
+                <input type="text" id="coc_host" name="coc_host">
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label" for="coc_user">Database username</label>
+              <div class="controls">
+                <input type="text" id="coc_user" name="coc_user">
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label" for="coc_password">Database password</label>
+              <div class="controls">
+                <input type="text" id="coc_password" name="coc_password">
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label" for="coc_database">Database name</label>
+              <div class="controls">
+                <input type="text" id="coc_database" name="coc_database">
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label" for="coc_prefix">Table prefix</label>
+              <div class="controls">
+                <input type="text" id="coc_prefix" name="coc_prefix">
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="controls">
+                <button type="submit" class="btn btn-primary" name="coc_install" value="Install">Install</button>
+              </div>
+            </div>
           </fieldset>
-          <button type="submit" class="btn" name="coc_install" value="Install">Install</button>
 	</form>
       <?php
 }

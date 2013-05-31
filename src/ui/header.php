@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -42,6 +43,10 @@
       }
       .marketing p + h4 {
         margin-top: 28px;
+      }
+      td.table-result, th.table-result {
+        width: 1%;
+        text-align: center;
       }
     </style>
     <link href="<?php __DIR__ ?>../css/bootstrap-responsive.css" rel="stylesheet">

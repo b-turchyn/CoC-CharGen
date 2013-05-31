@@ -27,18 +27,36 @@
 
 require_once dirname(__FILE__) . '/io.php';
 
-class SQLiInstall extends mysqli{
+class SQLiInstall extends mysqli
+{
 	/** Holds the table prefix for all tables */
   private $prefix;
+  /** Host to connect to */
+  private $dbhost;
+  private $dbuser;
+  private $dbpass;
+  private $dbdatabase;
 
-  public function __construct($host, $user, $pass, $database, $prefix) {
+  public function __construct($host, $user, $pass, $database, $prefix)
+  {
 		
 		$this->prefix = $prefix;
+		$this->dbhost = $host;
+		$this->dbuser = $user;
+		$this->dbpass = $pass;
+		$this->dbdatabase = $database;
 		
-    parent::__construct($host, $user, $pass, $database);
+    parent::__construct ( $host, $user, $pass, $database );
     // Check for errors
-    if(mysqli_connect_error()) {
-      die("<div class=\"alert alert-error\">Connection error (" . mysqli_connect_errno() . ") " . mysqli_connect_error() . "</div>");
+    if ( mysqli_connect_error ( ) )
+    {
+      die (
+      	"<div class=\"alert alert-error\">Connection error (" .
+      	mysqli_connect_errno() .
+      	") " .
+      	mysqli_connect_error() .
+      	"</div>"
+      );
     }
   }
 
@@ -48,31 +66,62 @@ class SQLiInstall extends mysqli{
 	 * @param string $filename 
 	 * @param string $paramtypes Bind_param based parameter types
 	 * @param string $paramvalues The values to bind in
-	 * @return An array. Index 0 is the error code (0 on success). Index 1 is the error text on failure, or the number of rows affected on pass
+	 * @return An array. Index 0 is the error code (0 on success). Index 1 is
+	 * 		   the error text on failure, or the number of rows affected on
+	 *		   success.
 	 * @author Brian Turchyn
 	 */
-	public function runQueryFromFile($filename, $paramtypes = null, $paramvalues = null) {
-		$querytext = sprintf(FileIO::getFile("tabledata/".$filename), $this->prefix);
-		if($stmt = $this->prepare($querytext) ) {
-			if ( $paramtypes && $paramvalues )
-				$stmt->bind_param($types, $values);
-			$stmt->execute();
-			// Did an error occur?
-			if($stmt->errno == 0) {
-				@$stmt->bind_result($res);
-				$stmt->fetch();
-			} else {
-				$res = array($stmt->errno, $stmt->error);
-			}
-			$stmt->close();
-		} else {
-			$res = array($this->errno, $this->error);
+	public function runQueryFromFile ( $filename, $paramtypes = null, $paramvalues = null )
+	{
+		// Just in case the database connection has been lost, try to connect once
+		// before continuing. If it fails after this, then tough.
+		if ( !$this->ping( ) )
+		{
+			$this->__construct ( $this->dbhost, $this->dbuser, $this->dbpass, $this->dbdatabase, $this->prefix );
 		}
+
+		// Get query from the file
+		$querytext = sprintf ( FileIO::getFile ( "tabledata/" . $filename ), $this->prefix );
+		// Prepare the statement
+		if ( $stmt = $this->prepare ( $querytext ) )
+		{
+			// If we have parameters, bind them to the prepared statement
+			if ( $paramtypes && $paramvalues )
+			{
+				$stmt->bind_param( $types, $values );
+			}
+			// Let 'er rip!
+			$stmt->execute( );
+			// Did an error occur?
+			if ( $stmt->errno == 0 )
+			{
+				@$stmt->bind_result ( $res );
+				$stmt->fetch( );
+			}
+			else // An error occurred during the execution of the statement
+			{
+				$res = array ( $stmt->errno, $stmt->error );
+			}
+			$stmt->close( );
+		}
+		else // Failed to prepare the SQL statement
+		{
+			$res = array ( $this->errno, $this->error );
+		}
+
+		// We're done. Return the result.
 		return $res;
 	}
 
-	public function __destruct() {
-		mysqli_close($this);
+	/**
+	 * Upon destruction of this class, ensure that the current database
+	 * connection has been closed cleanly.
+	 * 
+	 * @author Brian Turchyn
+	 */
+	public function __destruct( )
+	{
+		mysqli_close ( $this );
 	}
 }
 ?>

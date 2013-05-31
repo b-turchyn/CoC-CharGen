@@ -115,12 +115,15 @@ elseif ( isset ( $_POST[ 'coc_install' ] ) )
       // Display the result
       if ( $res == null )
       {
-	echo "<span class=\"label label-success\"><i class=\"icon icon-ok\"></i></span>\n";
+        echo "<span class=\"label label-success\"><i class=\"icon-ok\"></i></span>\n";
       }
       else
       {
-	echo "<span class=\"label label-important\"><i class=\"icon icon-remove\"></i></span>\n";
-	$failed = true;
+        echo "<span class=\"label label-important\"><i class=\"icon-remove\"></i></span>\n";
+        // Add a new row to the table to display the error message
+        echo "</td></tr><tr class=\"error\"><td colspan=\"2\"><i class=\"icon-arrow-right\"></i>&nbsp;";
+        echo $res[ 1 ];
+        $failed = true;
       }
       echo "</td></tr>\n";
     }

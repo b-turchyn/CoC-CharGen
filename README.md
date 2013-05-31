@@ -39,7 +39,7 @@ Unpack the `src/` directory into your `public_html/` (or equivalent) directory o
 
 # Support
 
-If you love Call of Cthulhu half as much as we do, buy some stuff from "http://www.chaosium.com/":http://www.chaosium.com to support the game. Without them, we wouldn't need this tool!
+If you love Call of Cthulhu half as much as we do, buy some stuff from [http://www.chaosium.com/](http://www.chaosium.com) to support the game. Without them, we wouldn't need this tool!
 
 _CoC-CharGen_ is supported by:
 

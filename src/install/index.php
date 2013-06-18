@@ -18,13 +18,17 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  ************************************************************************/
 
-error_reporting(0);
-ini_set('display_errors','Off');
+error_reporting(E_ALL);
+ini_set('display_errors','on');
 
 require_once 'classes/sqli.php';
+require_once 'classes/configfactory.php';
 
 define('CFG_FILE', "../config.php");
+define('CFG_SAMPLE', "classes/config.sample.php");
 define('INS_LOCK', "install.lock");
+
+$sql = null;
 
 function bufferflush ( )
 {
@@ -128,17 +132,53 @@ elseif ( isset ( $_POST[ 'coc_install' ] ) )
       echo "</td></tr>\n";
     }
   }
-  echo "</table>\n";
 	
   // Only write the config and lock the installer if we've succeeded
   if ( !$failed )
   {
-    // TODO: Write the configuration file out
-    echo ( touch ( CFG_FILE ) ? "Config created" : "Config creation failed!" );
+    $configCreated = false;
+    $configFactory = new ConfigFactory( );
+    $configFile = $configFactory->generate(
+      CFG_SAMPLE,
+      $_POST['coc_host'],
+      $_POST['coc_user'],
+      $_POST['coc_password'],
+      $_POST['coc_database'],
+      $_POST['coc_prefix'] );
+
+    if ( $configFile != false )
+    {
+      $configCreated = $configFactory->write( $configFile, CFG_FILE );
+    }
+    echo "<tr><td>Configuration File Creation</td><td class=\"table-result\">";
+    if ( $configCreated )
+    {
+      echo "<span class=\"label label-success\"><i class=\"icon-ok\"></i></span>\n";
+    }
+    else
+    {
+      $failed = true;
+      echo "<span class=\"label label-important\"><i class=\"icon-remove\"></i></span>\n";
+    }
+    echo "</td></tr>";
 	
-    // Lock the installer
-    echo ( touch ( INS_LOCK ) ? "Lock created" : "Lock creation failed!" );
+    if ( !$failed )
+    {
+      // Lock the installer
+      echo "<tr><td>Installer Lock File Creation</td><td class=\"table-result\">";
+      if ( touch ( INS_LOCK ) )
+      {
+        echo "<span class=\"label label-success\"><i class=\"icon-ok\"></i></span>\n";
+      }
+      else
+      {
+        $failed = true;
+        echo "<span class=\"label label-important\"><i class=\"icon-remove\"></i></span>\n";
+      }
+    }
   }
+  echo "</td></tr>";
+  echo "</table>\n";
 	
   // Display the overall result
   if ( !$failed )

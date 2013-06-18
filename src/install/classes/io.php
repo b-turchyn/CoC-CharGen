@@ -1,7 +1,7 @@
 <?php
 /************************************************************************
  * Call of Cthulhu Character Generator
- * Copyright (C) 2011 Brian Turchyn, Glen Conolly, Tyler Omichinski
+ * Copyright (C) 2013 Brian Turchyn
  * All references to commercial items copyright their respective owners.
  *
  * This program is free software: you can redistribute it and/or modify

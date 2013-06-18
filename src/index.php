@@ -1,7 +1,7 @@
 <?php
 /************************************************************************
  * Call of Cthulhu Character Generator
- * Copyright (C) 2011 Brian Turchyn, Glen Conolly, Tyler Omichinski
+ * Copyright (C) 2013 Brian Turchyn
  * All references to commercial items copyright their respective owners.
  *
  * This program is free software: you can redistribute it and/or modify
@@ -33,7 +33,7 @@ require_once CLSPATH.'occupations.php';
 require_once CLSPATH.'stats.php';
 require_once CLSPATH.'sql.php';
 
-$sql = new MySQLQueries("rs5.websitehostserver.net", "bturchyn_chargen", "dummypass", "bturchyn_chargen", "coc_");
+$sql = new MySQLQueries(Config::getDatabaseHost( ), Config::getDatabaseUser( ), Config::getDatabasePassword( ), Config::getDatabaseName( ), Config::getDatabasePrefix( ));
 
 $stats = new StatGenerator();
 $stats->roll();

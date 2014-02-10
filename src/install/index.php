@@ -212,7 +212,7 @@ else
             <div class="control-group">
               <label class="control-label" for="coc_password">Database password</label>
               <div class="controls">
-                <input type="text" id="coc_password" name="coc_password">
+                <input type="password" id="coc_password" name="coc_password">
               </div>
             </div>
             <div class="control-group">
@@ -224,7 +224,7 @@ else
             <div class="control-group">
               <label class="control-label" for="coc_prefix">Table prefix</label>
               <div class="controls">
-                <input type="text" id="coc_prefix" name="coc_prefix">
+                <input type="text" id="coc_prefix" name="coc_prefix" value="coc_">
               </div>
             </div>
             <div class="control-group">

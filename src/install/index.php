@@ -201,7 +201,7 @@ else
             <div class="control-group">
               <label class="control-label" for="coc_host">Server host name</label>
               <div class="controls">
-                <input type="text" id="coc_host" name="coc_host">
+                <input type="text" id="coc_host" name="coc_host" value="localhost">
               </div>
             </div>
             <div class="control-group">

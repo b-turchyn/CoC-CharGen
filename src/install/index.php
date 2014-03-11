@@ -24,7 +24,8 @@ ini_set('display_errors','on');
 require_once 'classes/sqli.php';
 require_once 'classes/configfactory.php';
 
-define('CFG_FILE', "../config.php");
+define("ROOT_DIR", "../");
+define('CFG_FILE', ROOT_DIR . "config.php");
 define('CFG_SAMPLE', "classes/config.sample.php");
 define('INS_LOCK', "install.lock");
 

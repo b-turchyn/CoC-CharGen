@@ -185,6 +185,9 @@ elseif ( isset ( $_POST[ 'coc_install' ] ) )
   if ( !$failed )
   {
     echo "<div class='alert alert-success'>Completed successfully!</div>";
+?>
+            <form action="../"><input type="submit" class="btn btn-success" value="Let's Go!"></form>
+<?php
   }
   else
   {

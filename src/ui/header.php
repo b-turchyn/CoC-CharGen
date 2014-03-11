@@ -7,7 +7,7 @@
     <meta name="description" content="Character generator for Call of Cthulhu">
     <meta name="author" content="Brian Turchyn">
 
-    <link href="<?php __DIR__ ?>../css/bootstrap.css" rel="stylesheet">
+    <link href="<?php echo ROOT_DIR ?>css/bootstrap.css" rel="stylesheet">
     <style type="text/css">
       body {
         padding-top: 20px;
@@ -49,7 +49,7 @@
         text-align: center;
       }
     </style>
-    <link href="<?php __DIR__ ?>../css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="<?php echo ROOT_DIR ?>css/bootstrap-responsive.css" rel="stylesheet">
   </head>
   <body>
     <div class="container-narrow">

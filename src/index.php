@@ -18,8 +18,11 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  ************************************************************************/
 
-define("CONFIG_FILE","config.php");
-define("CLSPATH", "classes/");
+define("ROOT_DIR", "");
+define("CONFIG_FILE", ROOT_DIR . "config.php");
+define("CLSPATH", ROOT_DIR . "classes/");
+define("MODELS", ROOT_DIR . "models/");
+define("UI", ROOT_DIR . "ui/");
 
 if(!file_exists(CONFIG_FILE)) {
   die("Config file does not exist. Run the installer first!");
@@ -32,12 +35,24 @@ require_once CLSPATH.'names.php';
 require_once CLSPATH.'occupations.php';
 require_once CLSPATH.'stats.php';
 require_once CLSPATH.'sql.php';
+require_once UI.'routing.php';
 
 $sql = new MySQLQueries(Config::getDatabaseHost( ), Config::getDatabaseUser( ), Config::getDatabasePassword( ), Config::getDatabaseName( ), Config::getDatabasePrefix( ));
 
-$stats = new StatGenerator();
-$stats->roll();
-echo $stats->toString();
-echo $sql->getFullName("F");
+/*
+ *$stats = new StatGenerator();
+ *$stats->roll();
+ *echo $stats->toString();
+ *echo $sql->getFullName("M");
+ */
 
-?>
+?><?php include 'ui/header.php'; ?>
+      <div class="masthead">
+        <h3>Call of Cthulhu Character Generator</h3>
+      </div>
+      <hr>
+      <div class="jumbotron">
+        <h1>Character Roller</h1>
+      </div>
+<?php include delegate( ); ?>
+<?php include 'ui/footer.php'; ?>

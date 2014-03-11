@@ -27,6 +27,9 @@ class MySQLQueries extends mysqli {
   // List of all eras
   const getEras = "SELECT * FROM ?eras ORDER BY name ASC";
 
+  const getEthnicityCount = 
+    "";
+
   // Count number of first names
   const getFirstNameCount = 
     "SELECT COUNT(*) FROM %snames 
@@ -40,18 +43,18 @@ class MySQLQueries extends mysqli {
     WHERE isfirst = false 
     AND deleted_dt IS NULL";
 
-	// Retrieves a specific first name
-	const getFirstName = 
-		"SELECT name FROM %snames
-		WHERE isfirst = true
-		AND gender = ?
-		LIMIT ?, 1";
-	
-	// Retrieves a specific last name
-	const getLastName = 
-		"SELECT name FROM %snames
-		WHERE isfirst = false
-		LIMIT ?, 1";
+  // Retrieves a specific first name
+  const getFirstName = 
+    "SELECT name FROM %snames
+    WHERE isfirst = true
+    AND gender = ?
+    LIMIT ?, 1";
+
+  // Retrieves a specific last name
+  const getLastName = 
+    "SELECT name FROM %snames
+    WHERE isfirst = false
+    LIMIT ?, 1";
 
   public function __construct($host, $user, $pass, $database, $prefix) {
 		
@@ -68,18 +71,70 @@ class MySQLQueries extends mysqli {
 		mysqli_close($this);
 	}
 
-	/**
-	 * Retrieves the number of first names of a particular gender in the database
-	 *
-	 * @param string $gender 'M' or 'F' (case-sensitive)
-	 * @return integer >= 0 on success, false on failure
-	 * @author Brian Turchyn
-	 */
+  /**
+   * Retrieves the number of ethnicities in the database
+   *
+   * @return integer >= 0 on success, false on failure
+   * @author Brian Turchyn
+   */
+  public function getEthnicityCount( ) {
+    $result = false;
+    $stmt = null;
+    if( $stmt = $this->prepare($this->preparePrefix(self::getEthnicityCount) ) ) {
+      $stmt->execute();
+      // Retrieve the result, and return false on failure.
+      $stmt->bind_result($res);
+      if ( $stmt->fetch() ) {
+        $result = $res;
+      }
+    } else echo $this->error;
+
+    if ( $stmt != null ) {
+      $stmt->close();
+    }
+
+    return $result;
+  }
+
+  /**
+   * Retrieves all ethnicities from the database
+   *
+   * @return array of arrays in key => value layout on success, null on failure
+   * @author Brian Turchyn
+   */
+  public function getEthnicities( ) {
+    $result = null;
+    $stmt = null;
+    
+    if( $stmt = $this->prepare($this->preparePrefix(self::getEthnicities) ) ) {
+      $stmt->execute();
+      // Retrieve the result, and return false on failure.
+      $stmt->bind_result($key, $name);
+      $result = [];
+      while ( $stmt->fetch() ) {
+        $result[] = array( 'key' => $key, 'value' => $name );
+      }
+    } else echo $this->error;
+
+    if ( $stmt != null ) {
+      $stmt->close();
+    }
+    
+    return $result;
+  }
+
+  /**
+   * Retrieves the number of first names of a particular gender in the database
+   *
+   * @param string $gender 'M' or 'F' (case-sensitive)
+   * @return integer >= 0 on success, false on failure
+   * @author Brian Turchyn
+   */
   public function getFirstNameCount($gender) {
     $result = false;
-		$stmt = null;
+    $stmt = null;
     if( $stmt = $this->prepare($this->preparePrefix(self::getFirstNameCount) ) ) {
-			$both = 'B';
+      $both = 'B';
       $stmt->bind_param("s", $gender);
       $stmt->execute();
       // Retrieve the result, and return false on failure.
@@ -89,18 +144,18 @@ class MySQLQueries extends mysqli {
       }
     } else echo $this->error;
 
-		$stmt->close();
+    $stmt->close();
 
     return $result;
   }
 
-	/**
-	 * Retrieves the number of last names in the database
-	 *
-	 * @return integer >= 0 on success, false on failure
-	 * @author Brian Turchyn
-	 */
-	public function getLastNameCount() {
+  /**
+   * Retrieves the number of last names in the database
+   *
+   * @return integer >= 0 on success, false on failure
+   * @author Brian Turchyn
+   */
+  public function getLastNameCount() {
     $result = false;
 		$stmt = null;
     if( $stmt = $this->prepare($this->preparePrefix(self::getLastNameCount) ) ) {

@@ -18,13 +18,16 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  ************************************************************************/
 
-class Era
+class Gender
 {
-  public static $ERAS = array(
-    array( 'key' => '1890', 'value' => '1890s' ),
-    array( 'key' => '1920', 'value' => '1920s' ),
-    array( 'key' => '1990', 'value' => '1990s' ),
-    array( 'key' => 'dg', 'value' => 'Delta Green' )
+  public static $MALE = 'Male';
+  public static $FEMALE = 'Female';
+  public static $RANDOM = 'Random';
+
+  public static $GENDERS = array(
+    array( 'key' => 'M', 'value' => 'Male' ),
+    array( 'key' => 'F', 'value' => 'Female' ),
+    array( 'key' => 'B', 'value' => 'Random' )
   );
 
 }

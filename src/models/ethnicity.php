@@ -18,14 +18,20 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  ************************************************************************/
 
-class Era
+class Ethnicity
 {
-  public static $ERAS = array(
-    array( 'key' => '1890', 'value' => '1890s' ),
+  public static $OPTIONS = array(
+    array( 'key' => '', 'value' => '1890s' ),
     array( 'key' => '1920', 'value' => '1920s' ),
     array( 'key' => '1990', 'value' => '1990s' ),
     array( 'key' => 'dg', 'value' => 'Delta Green' )
   );
 
+  static function getOptions( )
+  {
+    global $sql;
+
+    return $sql->getEthnicities( );
+  }
 }
 ?>

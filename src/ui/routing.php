@@ -19,7 +19,11 @@
  ************************************************************************/
 
 function delegate( ) {
-  if( isset( $_POST['generate'] ) ) {
+  if(!file_exists(CONFIG_FILE)) {
+    header( "HTTP/1.1 307 Temporary Redirect" );
+    header( "Location: install/" );
+  } elseif( isset( $_POST['generate'] ) ) {
+    // TODO
   } else {
     $result = UI . 'char_config.php';
   }

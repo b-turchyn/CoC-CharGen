@@ -24,9 +24,10 @@ define("CLSPATH", ROOT_DIR . "classes/");
 define("MODELS", ROOT_DIR . "models/");
 define("UI", ROOT_DIR . "ui/");
 
-if(!file_exists(CONFIG_FILE)) {
-  die("Config file does not exist. Run the installer first!");
-}
+require_once UI.'routing.php';
+
+// This may end up redirecting us and we may not even continue.
+$location = delegate( );
 
 require_once CONFIG_FILE;
 require_once CLSPATH.'backgrounds.php';
@@ -35,7 +36,6 @@ require_once CLSPATH.'names.php';
 require_once CLSPATH.'occupations.php';
 require_once CLSPATH.'stats.php';
 require_once CLSPATH.'sql.php';
-require_once UI.'routing.php';
 
 $sql = new MySQLQueries(Config::getDatabaseHost( ), Config::getDatabaseUser( ), Config::getDatabasePassword( ), Config::getDatabaseName( ), Config::getDatabasePrefix( ));
 
@@ -54,5 +54,5 @@ $sql = new MySQLQueries(Config::getDatabaseHost( ), Config::getDatabaseUser( ), 
       <div class="jumbotron">
         <h1>Character Roller</h1>
       </div>
-<?php include delegate( ); ?>
+<?php include $location; ?>
 <?php include 'ui/footer.php'; ?>

@@ -27,5 +27,17 @@ class Era
     array( 'key' => 'dg', 'value' => 'Delta Green' )
   );
 
+  static function getValue( $era ) {
+    $result = NULL;
+
+    foreach ( self::$ERAS as $value ) {
+      if( $value['key'] === $era ) {
+        $result = $value['value'];
+        break;
+      }
+    }
+
+    return $result;
+  }
 }
 ?>

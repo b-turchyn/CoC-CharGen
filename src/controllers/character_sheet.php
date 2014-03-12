@@ -23,10 +23,31 @@
 $msgs = $_SESSION['messages'];
 $params = updateParams( );
 $view = 'character_sheet.php';
+$viewVars = array();
 
 // Perform validation
 if( isValid( $params, $msgs ) ) {
-  // Perform logic
+  $viewVars['era'] = Era::getValue( $params['era'] );
+
+  // Generate Basic Information
+  $gender = ( $params['gender'] === 'B' ? 
+    Gender::$GENDERS[mt_rand(1, 2)] :
+    Gender::get( $params['gender'] ) );
+
+  $viewVars['name'] = $sql->getFullName( $gender['key'] );
+  $viewVars['gender'] = $gender['value'];
+  $viewVars['occupation'] = 'TODO';
+  $viewVars['nationality'] = 'TODO';
+  $viewVars['age'] = 'TODO';
+  $viewVars['birthplace'] = 'TODO';
+  $viewVars['colleges_degrees'] = 'TODO';
+  $viewVars['mental_disorders'] = 'TODO';
+
+  // Generate Stats
+  $stats = new StatGenerator( $params['stat_type'] );
+  $stats->roll( );
+  $viewVars['stats'] = $stats;
+
 } else {
 $view = 'char_config.php';
 }
@@ -49,6 +70,7 @@ function updateParams( ) {
 
 function isValid( $params, $msgs ) {
   // Check all variables present
+  // TODO: Validate valid values provided
   if( $params['era'] == NULL ) {
     $msgs->addError( 'Era not provided' );
   }

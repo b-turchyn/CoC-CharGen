@@ -30,5 +30,23 @@ class Gender
     array( 'key' => 'F', 'value' => 'Female' )
   );
 
+  static function getValue( $gender ) {
+    $result = get( $gender );
+
+    return ( $result != NULL ? $result['value'] : NULL );
+  }
+
+  static function get( $gender ) {
+    $result = NULL;
+
+    foreach ( self::$GENDERS as $value ) {
+      if( $value['key'] === $gender ) {
+        $result = $value;
+        break;
+      }
+    }
+
+    return $result;
+  }
 }
 ?>

@@ -74,7 +74,7 @@ class StatGenerator {
    * Constructor
    * Generates all needed dice pools
    */
-  public function __construct() {
+  public function __construct( $stat_type ) {
 
     // 3d6 dice pools
     $this->strPool = new DicePool(array(6,6,6),0);
@@ -262,6 +262,34 @@ class StatGenerator {
     return ($this->loaded ?
             (int)(($this->strPool->getResult() + $this->sizPool->getResult() ) / 2)
             : false);
+  }
+
+  public function getDMGBonus() {
+    $result = 0;
+
+    if($this->loaded) {
+      $value = $this->getSTR() + $this->getSIZ();
+      $dicePool = NULL;
+
+      // Calculate dice pool
+      if( $value <= 12 || $value >= 33 ) {
+        $dicePool = new DicePool(array(6), 0);
+      } elseif( $value <= 16 || $value >= 25 ) {
+        $dicePool = new DicePool(array(4), 0);
+      }
+
+      // Roll 'em!
+      if( $dicePool != NULL ) {
+        $dicePool->roll();
+        if( $value <= 16 ) {
+          $result = 0 - $dicePool->getResult();
+        } else {
+          $result = $dicePool->getResult();
+        }
+      }
+    }
+
+    return $result;
   }
 
   /**

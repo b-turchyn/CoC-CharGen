@@ -18,13 +18,61 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  ************************************************************************/
 
+include UI.'message_service.php';
+
 ?>
-<?php include UI.'message_service.php'; ?>
 <table class="character_sheet">
   <tr>
-    <td>ERA</td>
-    <td colspan="2">Basic Stats</td>
-    <td colspan="2">Characteristics and Rolls</td>
+  <td class="era"><h3><?php echo $viewVars['era'] ?></h3></td>
+    <td class="basic_stats" colspan="2">
+      <div>
+        <div>
+          <span class="fluid"><strong>Investigator Name</strong> <?php echo $viewVars['name'] ?></span>
+        </div>
+        <div>
+          <span class="fluid"><strong>Occupation</strong> <?php echo $viewVars['occupation'] ?></span>
+          <span class="fluid"><strong>Sex</strong> <?php echo $viewVars['gender'] ?></span>
+        </div>
+        <div>
+          <span class="fluid"><strong>Nationality</strong> <?php echo $viewVars['nationality'] ?></span>
+          <span class="fluid"><strong>Age</strong> <?php echo $viewVars['age'] ?></span>
+        </div>
+        <div>
+          <span class="fluid"><strong>Birthplace</strong> <?php echo $viewVars['birthplace'] ?></span>
+        </div>
+        <div>
+          <span class="fluid"><strong>Colleges,Degrees</strong> <?php echo $viewVars['colleges_degrees'] ?></span>
+        </div>
+        <div>
+          <span class="fluid"><strong>Mental Disorders</strong> <?php echo $viewVars['mental_disorders'] ?></span>
+        </div>
+      </div>
+    </td>
+    <td class="characteristics" colspan="2">
+      <h3>Characteristics and Rolls</h3>
+      <div>
+        <span><strong>STR</strong> <?php echo $viewVars['stats']->getSTR( ) ?></span>
+        <span><strong>DEX</strong> <?php echo $viewVars['stats']->getDEX( ) ?></span>
+        <span><strong>INT</strong> <?php echo $viewVars['stats']->getINT( ) ?></span>
+        <span><strong>Idea</strong> <?php echo $viewVars['stats']->getIdea( ) ?></span>
+      </div>
+      <div>
+        <span><strong>CON</strong> <?php echo $viewVars['stats']->getCON( ) ?></span>
+        <span><strong>APP</strong> <?php echo $viewVars['stats']->getAPP( ) ?></span>
+        <span><strong>POW</strong> <?php echo $viewVars['stats']->getPOW( ) ?></span>
+        <span><strong>Luck</strong> <?php echo $viewVars['stats']->getLUK( ) ?></span>
+      </div>
+      <div>
+        <span><strong>SIZ</strong> <?php echo $viewVars['stats']->getSIZ( ) ?></span>
+        <span><strong>SAN</strong> <?php echo $viewVars['stats']->getSAN( ) ?></span>
+        <span><strong>EDU</strong> <?php echo $viewVars['stats']->getEDU( ) ?></span>
+        <span><strong>Know</strong> <?php echo $viewVars['stats']->getKnow( ) ?></span>
+      </div>
+      <div>
+        <span class="wide"><strong>99-Cthulhu Mythos</strong> TODO</span>
+        <span class="wide"><strong>Damage Bonus</strong> <?php echo $viewVars['stats']->getDMGBonus( ) ?></span>
+      </div>
+    </td>
   </tr>
   <tr>
     <td rowspan="2">

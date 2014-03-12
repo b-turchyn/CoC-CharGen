@@ -1,0 +1,14 @@
+table.character_sheet { width: 100%; font-size: 12px;}
+table.character_sheet h3 { font-size: 16px; color: #FFF; background: #000; text-align: center }
+table.character_sheet span { width: 24%; margin: 0; padding: 0; display: inline-block; overflow-x: visible }
+table.character_sheet span.wide { width: 49%; }
+table.character_sheet span.fluid { width: auto; display: inline }
+table.character_sheet td { vertical-align: top; }
+
+table.character_sheet td.era { width: 10%; background: #000; }
+
+table.character_sheet td.basic_stats > div { margin: 2%; }
+
+table.character_sheet td.characteristics { width: 45%; }
+table.character_sheet td.characteristics  h3 { margin-top: 0; }
+table.character_sheet td.characteristics div { margin: 2%; }

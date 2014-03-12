@@ -27,21 +27,26 @@ define("UI", ROOT_DIR . "ui/");
 
 require_once UI.'routing.php';
 require_once CLSPATH.'message_service.php';
-
-// This may end up redirecting us and we may not even continue.
-$controller = delegate( );
-
-require_once CONFIG_FILE;
 require_once CLSPATH.'backgrounds.php';
 require_once CLSPATH.'dice.php';
 require_once CLSPATH.'names.php';
 require_once CLSPATH.'occupations.php';
 require_once CLSPATH.'stats.php';
 require_once CLSPATH.'sql.php';
+require_once CLSPATH.'ui.php';
+require_once MODELS.'era.php';
+require_once MODELS.'roll_type.php';
+require_once MODELS.'gender.php';
+
+// This may end up redirecting us and we may not even continue.
+$controller = delegate( );
+
+require_once CONFIG_FILE;
+
+$sql = new MySQLQueries(Config::getDatabaseHost( ), Config::getDatabaseUser( ), Config::getDatabasePassword( ), Config::getDatabaseName( ), Config::getDatabasePrefix( ));
 
 include $controller;
 
-$sql = new MySQLQueries(Config::getDatabaseHost( ), Config::getDatabaseUser( ), Config::getDatabasePassword( ), Config::getDatabaseName( ), Config::getDatabasePrefix( ));
 
 /*
  *$stats = new StatGenerator();

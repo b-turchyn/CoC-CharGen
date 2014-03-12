@@ -50,6 +50,7 @@
       }
     </style>
     <link href="<?php echo ROOT_DIR ?>css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="<?php echo ROOT_DIR ?>css/chargen.css" rel="stylesheet">
   </head>
   <body>
     <div class="container-narrow">

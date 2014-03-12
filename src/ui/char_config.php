@@ -23,6 +23,15 @@ include UI.'message_service.php';
 ?>
   <form method='POST' class="form-horizontal">
     <fieldset>
+      <legend>Meta</legend>
+      <div class="control-group">
+        <label class="control-label" for="player_name">Player Name</label>
+        <div class="controls">
+          <?php echo UI::buildTextInput( 'player_name', 'player_name' ) ?>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset>
       <legend>Mechanics</legend>
       <div class="control-group">
         <label class="control-label" for="era">Era</label>

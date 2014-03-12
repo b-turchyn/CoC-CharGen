@@ -12,3 +12,8 @@ table.character_sheet td.basic_stats > div { margin: 2%; }
 table.character_sheet td.characteristics { width: 45%; }
 table.character_sheet td.characteristics  h3 { margin-top: 0; }
 table.character_sheet td.characteristics div { margin: 2%; }
+
+table.character_sheet td.player_name { min-height: 300px; -webkit-transform: rotate(-90deg); -moz-transform: rotate(-90deg); -o-transform: rotate(-90deg); writing-mode: lr-bt ; }
+
+table.character_sheet td.points span { width: 1.28em; }
+table.character_sheet td.points span.bolded { font-weight: bold; width: auto; }

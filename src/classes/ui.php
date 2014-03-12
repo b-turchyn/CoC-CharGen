@@ -23,16 +23,34 @@
  */
 class UI
 {
-  static function buildSelect( $id, $selections, $name = null, $klass = null, $selected = null )
-  {
+  static function buildTextInput( $id, $name = NULL, $value = NULL, $klass = NULL, $placeholder = NULL ) {
+    $result = "<input type=\"text\" id=\"" . htmlspecialchars( $id ) . "\"";
+
+    if ( $name != NULL ) {
+      $result .= " name=\"" . htmlspecialchars( $name ) . "\"";
+    }
+    if( $value !== NULL ) {
+      $result .= " value=\"" . htmlspecialchars( $value ) . "\"";
+    }
+    if ( $klass != NULL ) {
+      $result .= " class=\"" . htmlspecialchars ( $klass ) . "\"";
+    }
+    if( $placeholder !== NULL ) {
+      $result .= " placeholder=\"" . htmlspecialchars( $placeholder ) . "\"";
+    }
+
+    $result .= ">";
+
+    return $result;
+  }
+
+  static function buildSelect( $id, $selections, $name = NULL, $klass = NULL, $selected = NULL ) {
     $result = "<select id=\"" . htmlspecialchars( $id ) . "\"";
 
-    if ( $name != null )
-    {
+    if ( $name != NULL ) {
       $result .= " name=\"" . htmlspecialchars( $name ) . "\"";
-    } 
-    if ( $klass != null )
-    {
+    }
+    if ( $klass != NULL ) {
       $result .= " class=\"" . htmlspecialchars ( $klass ) . "\"";
     }
 
@@ -41,14 +59,53 @@ class UI
     for ($i = 0; $i < count($selections); $i++) {
       $current = $selections[ $i ];
       $result .= "<option value=\"" . htmlspecialchars( $current['key'] ) . "\"";
-      if( $current['key'] != null && $current['key'] == $selected )
-      {
+
+      if( $current['key'] != NULL && $current['key'] == $selected ) {
         $result .= " selected=\"selected\"";
       }
+
       $result .= ">" . htmlspecialchars( $current['value'] ) . "</option>\n";
     }
 
     $result .= "</select>\n";
+
+    return $result;
+  }
+
+  static function buildMagicPoints( $points ) {
+    $result = "<span class=\"bolded\">Unconscious</span>";
+
+    $result .= self::buildNumbers( 0, 37, $points );
+
+    return $result;
+  }
+
+  static function buildHitPoints( $points ) {
+    $result = "<span class=\"bolded\">Dead</span>";
+
+    $result .= self::buildNumbers( -2, 37, $points );
+
+    return $result;
+  }
+
+  static function buildSanityPoints( $points ) {
+    $result = "<span class=\"bolded\">Insane</span>";
+
+    $result .= self::buildNumbers( 0, 99, $points );
+
+    return $result;
+  }
+
+  private static function buildNumbers( $start, $end, $tippingPoint ) {
+    $result = "";
+
+    for( $i = $start; $i <= $end; $i++ ) {
+      $result .= " <span";
+      if( $i > $tippingPoint ) {
+        $result .= " class=\"muted\"";
+      }
+      $result .= ">" . $i . "</span>";
+    }
 
     return $result;
   }

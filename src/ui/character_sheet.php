@@ -75,24 +75,33 @@ include UI.'message_service.php';
     </td>
   </tr>
   <tr>
-    <td rowspan="2">
-      Player's Name
+    <td rowspan="2" class="player_name">
+    <span><strong>Player's Name</strong> <?php echo htmlspecialchars( $viewVars['player_name'] ) ?></span>
     </td>
-    <td colspan="2">Sanity Points</td>
-    <td>Magic Points</td>
-    <td>Hit Points</td>
+    <td colspan="2" class="points">
+      <h3>Sanity Points</h3>
+      <?php echo UI::buildSanityPoints( $viewVars['stats']->getSAN( ) ) ?>
+    </td>
+    <td class="points">
+      <h3>Magic Points</h3>
+      <?php echo UI::buildMagicPoints( $viewVars['stats']->getPOW( ) ) ?>
+    </td>
+    <td class="points">
+      <h3>Hit Points</h3>
+      <?php echo UI::buildHitPoints( $viewVars['stats']->getHP( ) ) ?>
+    </td>
   </tr>
   <tr>
     <td colspan="4">
-      Investigator Skills
+      <h3>Investigator Skills</h3>
     </td>
   </tr>
   <tr>
     <td colspan="2">
-      Hand-To-Hand Weapons
+      <h3>Hand-To-Hand Weapons</h3>
     </td>
     <td colspan="3">
-      Firearms
+      <h3>Firearms</h3>
     </td>
   </tr>
 </table>

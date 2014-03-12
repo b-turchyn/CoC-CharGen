@@ -29,6 +29,8 @@ $viewVars = array();
 if( isValid( $params, $msgs ) ) {
   $viewVars['era'] = Era::getValue( $params['era'] );
 
+  $viewVars['player_name'] = $params['player_name'];
+
   // Generate Basic Information
   $gender = ( $params['gender'] === 'B' ? 
     Gender::$GENDERS[mt_rand(1, 2)] :
@@ -60,17 +62,26 @@ $_SESSION['messages'] = $msgs;
  */
 function updateParams( ) {
   $params = array( );
-  $params['era'] = ( isset( $_POST['era'] ) ? $_POST['era'] : NULL );
-  $params['stat_type'] = ( isset( $_POST['stat_type'] ) ? $_POST['stat_type'] : NULL );
-  $params['gender'] = ( isset( $_POST['gender'] ) ? $_POST['gender'] : NULL );
-  $params['fail'] = ( isset( $_POST['fail'] ) ? $_POST['fail'] : NULL );
+  $params['player_name'] = getPostVar( 'player_name' );
+  $params['era'] = getPostVar( 'era' );
+  $params['stat_type'] = getPostVar( 'stat_type' );
+  $params['gender'] = getPostVar( 'gender' );
+  $params['fail'] = getPostVar( 'fail' );
 
   return $params;
+}
+
+function getPostVar( $key ) {
+  return ( isset( $_POST[$key] ) && strlen( $_POST[$key] ) > 0 ? $_POST[$key] : NULL );
 }
 
 function isValid( $params, $msgs ) {
   // Check all variables present
   // TODO: Validate valid values provided
+  if( $params['player_name'] == NULL ) {
+    $msgs->addError( 'Player Name not provided' );
+  }
+
   if( $params['era'] == NULL ) {
     $msgs->addError( 'Era not provided' );
   }

@@ -25,9 +25,9 @@ class Gender
   public static $RANDOM = 'Random';
 
   public static $GENDERS = array(
+    array( 'key' => 'B', 'value' => 'Random' ),
     array( 'key' => 'M', 'value' => 'Male' ),
-    array( 'key' => 'F', 'value' => 'Female' ),
-    array( 'key' => 'B', 'value' => 'Random' )
+    array( 'key' => 'F', 'value' => 'Female' )
   );
 
 }

@@ -30,6 +30,7 @@
       <div class="control-group">
         <div class="controls">
           <button type="submit" class="btn btn-primary" name="generate" value="Generate">Generate</button>
+          <button type="reset" class="btn btn-warning" name="reset" value="Reset">Reset</button>
         </div>
       </div>
     </fieldset>

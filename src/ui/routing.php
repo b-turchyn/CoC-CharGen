@@ -19,15 +19,22 @@
  ************************************************************************/
 
 function delegate( ) {
+  // Initial check -- we have a configuration file!
   if(!file_exists(CONFIG_FILE)) {
     header( "HTTP/1.1 307 Temporary Redirect" );
     header( "Location: install/" );
-  } elseif( isset( $_POST['generate'] ) ) {
-    // TODO
-  } else {
+
+  } elseif( $_SERVER['REQUEST_METHOD'] === 'POST' ) {
+    // POST requests
+    if( isset( $_POST['generate'] ) ) {
+    } else {
+      header( "HTTP/1.1 404 Not Found" );
+      die( );
+    }
+  } else { // GET requests
+    // Default route
     $result = UI . 'char_config.php';
   }
-
   return $result;
 }
 ?>

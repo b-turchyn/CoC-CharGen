@@ -1,7 +1,7 @@
 <?php
 /************************************************************************
  * Call of Cthulhu Character Generator
- * Copyright (C) 2013 Brian Turchyn
+ * Copyright (C) 2011-2014 Brian Turchyn
  * All references to commercial items copyright their respective owners.
  *
  * This program is free software: you can redistribute it and/or modify
@@ -18,25 +18,41 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  ************************************************************************/
 
-function delegate( ) {
-  $result = '';
-  // Initial check -- we have a configuration file!
-  if(!file_exists(CONFIG_FILE)) {
-    header( "HTTP/1.1 307 Temporary Redirect" );
-    header( "Location: install/" );
+class Messages {
+  private $errors = array();
+  private $warnings = array();
 
-  } elseif( $_SERVER['REQUEST_METHOD'] === 'POST' ) {
-    // POST requests
-    if( isset( $_POST['generate'] ) ) {
-      $result = CONTROLLERS . 'character_sheet.php';
-    } else {
-      header( "HTTP/1.1 404 Not Found" );
-      die( );
-    }
-  } else { // GET requests
-    // Default route
-    $result = CONTROLLERS . 'char_config.php';
+  function reset( ) {
+    $this->errors = array();
+    $this->warnings = array();
   }
-  return $result;
+
+  function addError( $message ) {
+    $this->errors[] = $message;
+  }
+
+  function addWarning( $message ) {
+    $this->warnings[] = $message;
+  }
+
+  function getErrors( ) {
+    return $this->errors;
+  }
+
+  function getWarnings( ) {
+    return $this->warnings;
+  }
+
+  function hasErrors( ) {
+    return count( $this->errors ) > 0;
+  }
+
+  function hasWarnings( ) {
+    return count( $this->warnings ) > 0;
+  }
+}
+
+if( !isset( $_SESSION['messages'] ) || !($_SESSION['messages'] instanceof Messages) ) {
+  $_SESSION['messages'] = new Messages( );
 }
 ?>

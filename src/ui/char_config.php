@@ -3,6 +3,7 @@
 <?php require_once ROOT_DIR . 'models/roll_type.php'; ?>
 <?php require_once ROOT_DIR . 'models/gender.php'; ?>
 
+<?php include UI.'message_service.php'; ?>
   <form method='POST' class="form-horizontal">
     <fieldset>
       <legend>Mechanics</legend>

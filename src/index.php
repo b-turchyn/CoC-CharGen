@@ -19,15 +19,17 @@
  ************************************************************************/
 
 define("ROOT_DIR", "");
-define("CONFIG_FILE", ROOT_DIR . "config.php");
 define("CLSPATH", ROOT_DIR . "classes/");
+define("CONFIG_FILE", ROOT_DIR . "config.php");
+define("CONTROLLERS", ROOT_DIR . "controllers/");
 define("MODELS", ROOT_DIR . "models/");
 define("UI", ROOT_DIR . "ui/");
 
 require_once UI.'routing.php';
+require_once CLSPATH.'message_service.php';
 
 // This may end up redirecting us and we may not even continue.
-$location = delegate( );
+$controller = delegate( );
 
 require_once CONFIG_FILE;
 require_once CLSPATH.'backgrounds.php';
@@ -36,6 +38,8 @@ require_once CLSPATH.'names.php';
 require_once CLSPATH.'occupations.php';
 require_once CLSPATH.'stats.php';
 require_once CLSPATH.'sql.php';
+
+include $controller;
 
 $sql = new MySQLQueries(Config::getDatabaseHost( ), Config::getDatabaseUser( ), Config::getDatabasePassword( ), Config::getDatabaseName( ), Config::getDatabasePrefix( ));
 
@@ -54,5 +58,5 @@ $sql = new MySQLQueries(Config::getDatabaseHost( ), Config::getDatabaseUser( ), 
       <div class="jumbotron">
         <h1>Character Roller</h1>
       </div>
-<?php include $location; ?>
+<?php include UI . $view; ?>
 <?php include 'ui/footer.php'; ?>

@@ -1,7 +1,7 @@
 <?php
 /************************************************************************
  * Call of Cthulhu Character Generator
- * Copyright (C) 2013 Brian Turchyn
+ * Copyright (C) 2011-2014 Brian Turchyn
  * All references to commercial items copyright their respective owners.
  *
  * This program is free software: you can redistribute it and/or modify
@@ -18,25 +18,33 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  ************************************************************************/
 
-function delegate( ) {
-  $result = '';
-  // Initial check -- we have a configuration file!
-  if(!file_exists(CONFIG_FILE)) {
-    header( "HTTP/1.1 307 Temporary Redirect" );
-    header( "Location: install/" );
-
-  } elseif( $_SERVER['REQUEST_METHOD'] === 'POST' ) {
-    // POST requests
-    if( isset( $_POST['generate'] ) ) {
-      $result = CONTROLLERS . 'character_sheet.php';
-    } else {
-      header( "HTTP/1.1 404 Not Found" );
-      die( );
-    }
-  } else { // GET requests
-    // Default route
-    $result = CONTROLLERS . 'char_config.php';
-  }
-  return $result;
-}
 ?>
+<?php include UI.'message_service.php'; ?>
+<table class="character_sheet">
+  <tr>
+    <td>ERA</td>
+    <td colspan="2">Basic Stats</td>
+    <td colspan="2">Characteristics and Rolls</td>
+  </tr>
+  <tr>
+    <td rowspan="2">
+      Player's Name
+    </td>
+    <td colspan="2">Sanity Points</td>
+    <td>Magic Points</td>
+    <td>Hit Points</td>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Investigator Skills
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      Hand-To-Hand Weapons
+    </td>
+    <td colspan="3">
+      Firearms
+    </td>
+  </tr>
+</table>

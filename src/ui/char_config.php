@@ -19,7 +19,6 @@
  ************************************************************************/
 
 include UI.'message_service.php';
-
 ?>
   <form method='POST' class="form-horizontal">
     <fieldset>
@@ -27,31 +26,31 @@ include UI.'message_service.php';
       <div class="control-group">
         <label class="control-label" for="player_name">Player Name</label>
         <div class="controls">
-          <?php echo UI::buildTextInput( 'player_name', 'player_name' ) ?>
+          <?php echo UI::buildTextInput( 'player_name', 'player_name', $viewVars['player_name'] ) ?>
         </div>
       </div>
     </fieldset>
     <fieldset>
       <legend>Mechanics</legend>
       <?php
-      echo UI::buildControlGroup( 'era', 'Era', 
-        UI::BuildSelect( 'era', Era::getEras( ), 'era' ) )
+      echo UI::buildControlGroup( 'era', 'Era',
+        UI::BuildSelect( 'era', Era::getEras( ), 'era', NULL, $viewVars['era'] ) )
       ?>
       <?php
       echo UI::buildControlGroup( 'stat_type', 'Stat Roll Type', 
-        UI::BuildSelect( 'stat_type', RollType::$ROLL_TYPES, 'stat_type' ) )
+        UI::BuildSelect( 'stat_type', RollType::$ROLL_TYPES, 'stat_type', NULL, $viewVars['stat_type'] ) )
       ?>
     </fieldset>
     <fieldset>
       <legend>Character Options</legend>
       <?php
       echo UI::buildControlGroup( 'gender', 'Gender', 
-        UI::BuildSelect( 'gender', Gender::$GENDERS, 'gender' ) )
+        UI::BuildSelect( 'gender', Gender::$GENDERS, 'gender', NULL, $viewVars['gender'] ) )
       ?>
       <div class="control-group">
         <label class="control-label" for="occupation">Occupation</label>
         <div class="controls">
-          <?php echo UI::buildSelect( 'occupation', Occupation::getOccupations( ), 'occupation' ) ?>
+          <?php echo UI::buildSelect( 'occupation', Occupation::getOccupations( ), 'occupation', NULL, $viewVars['occupation'] ) ?>
         </div>
       </div>
       <div class="control-group">

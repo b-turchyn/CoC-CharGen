@@ -58,7 +58,12 @@ if( isValid( $params, $msgs ) ) {
   $viewVars['stats'] = $stats;
 
 } else {
-$view = 'char_config.php';
+  $view = 'char_config.php';
+  $viewVars = array( 'player_name'  => $params['player_name'],
+                     'era'          => $params['era'],
+                     'stat_type'    => $params['stat_type'],
+                     'gender'       => $params['gender'],
+                     'occupation'   => $params['occupation'] );
 }
 // Prepare output
 $_SESSION['messages'] = $msgs;

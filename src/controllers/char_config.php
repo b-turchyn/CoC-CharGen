@@ -21,4 +21,9 @@
 // Gather parameters
 
 $view = 'char_config.php';
+$viewVars = array( 'player_name'  => NULL,
+                   'era'          => NULL,
+                   'stat_type'    => NULL,
+                   'gender'       => NULL,
+                   'occupation'   => NULL );
 ?>

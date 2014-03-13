@@ -23,6 +23,19 @@
  */
 class UI
 {
+  static function buildControlGroup( $label_id, $label_value, $contents ) {
+    $id = htmlspecialchars( $label_id );
+    $value = htmlspecialchars( $label_value );
+    return <<<EOF
+      <div class="control-group">
+        <label class="control-label" for="{$label_id}">{$label_value}</label>
+        <div class="controls">
+          {$contents}
+        </div>
+      </div>
+EOF;
+  }
+
   static function buildTextInput( $id, $name = NULL, $value = NULL, $klass = NULL, $placeholder = NULL ) {
     $result = "<input type=\"text\" id=\"" . htmlspecialchars( $id ) . "\"";
 

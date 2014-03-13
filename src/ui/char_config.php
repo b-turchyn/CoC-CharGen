@@ -33,25 +33,25 @@ include UI.'message_service.php';
     </fieldset>
     <fieldset>
       <legend>Mechanics</legend>
-      <div class="control-group">
-        <label class="control-label" for="era">Era</label>
-        <div class="controls">
-          <?php echo UI::buildSelect( 'era', Era::getEras( ), 'era' ) ?>
-        </div>
-      </div>
-      <div class="control-group">
-        <label class="control-label" for="stat_type">Stat Roll Type</label>
-        <div class="controls">
-          <?php echo UI::buildSelect( 'stat_type', RollType::$ROLL_TYPES, 'stat_type' ) ?>
-        </div>
-      </div>
+      <?php
+      echo UI::buildControlGroup( 'era', 'Era', 
+        UI::BuildSelect( 'era', Era::getEras( ), 'era' ) )
+      ?>
+      <?php
+      echo UI::buildControlGroup( 'stat_type', 'Stat Roll Type', 
+        UI::BuildSelect( 'stat_type', RollType::$ROLL_TYPES, 'stat_type' ) )
+      ?>
     </fieldset>
     <fieldset>
       <legend>Character Options</legend>
+      <?php
+      echo UI::buildControlGroup( 'gender', 'Gender', 
+        UI::BuildSelect( 'gender', Gender::$GENDERS, 'gender' ) )
+      ?>
       <div class="control-group">
-        <label class="control-label" for="gender">Gender</label>
+        <label class="control-label" for="occupation">Occupation</label>
         <div class="controls">
-          <?php echo UI::buildSelect( 'gender', Gender::$GENDERS, 'gender' ) ?>
+          <?php echo UI::buildSelect( 'occupation', Occupation::getOccupations( ), 'occupation' ) ?>
         </div>
       </div>
       <div class="control-group">

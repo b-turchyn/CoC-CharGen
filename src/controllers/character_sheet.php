@@ -38,7 +38,14 @@ if( isValid( $params, $msgs ) ) {
 
   $viewVars['name'] = $sql->getFullName( $gender['key'] );
   $viewVars['gender'] = $gender['value'];
-  $viewVars['occupation'] = 'TODO';
+  
+  // Generate Occupation information
+  $occupations = Occupation::getOccupations( );
+  $occupation = ( $params['occupation'] === 'R' ?
+    $occupations[mt_rand(1, count($occupations) - 1 )] :
+    Occupation::get( $params['occupation'] ) );
+  $viewVars['occupation'] = $occupation['value'];
+
   $viewVars['nationality'] = 'TODO';
   $viewVars['age'] = 'TODO';
   $viewVars['birthplace'] = 'TODO';
@@ -66,7 +73,7 @@ function updateParams( ) {
   $params['era'] = getPostVar( 'era' );
   $params['stat_type'] = getPostVar( 'stat_type' );
   $params['gender'] = getPostVar( 'gender' );
-  $params['fail'] = getPostVar( 'fail' );
+  $params['occupation'] = getPostVar( 'occupation' );
 
   return $params;
 }
@@ -92,6 +99,10 @@ function isValid( $params, $msgs ) {
 
   if( $params['gender'] == NULL ) {
     $msgs->addError( 'Gender not provided' );
+  }
+
+  if( $params['occupation'] == NULL ) {
+    $msgs->addError( 'Occupation not provided' );
   }
 
   return !$msgs->hasErrors( );

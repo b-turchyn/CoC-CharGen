@@ -26,6 +26,7 @@ class MySQLQueries extends mysqli {
 
   // List of all eras
   const getEras = "SELECT era_id, era_name FROM %seras WHERE deleted_dt IS NULL ORDER BY era_name ASC";
+  const getOccupations = "SELECT occupation_id, occupation_name FROM %soccupations ORDER BY occupation_name ASC";
 
   const getEthnicityCount = 
     "";
@@ -107,6 +108,33 @@ class MySQLQueries extends mysqli {
     $stmt = null;
 
     if( $stmt = $this->prepare($this->preparePrefix(self::getEras) ) ) {
+      $stmt->execute();
+      // Retrieve the result, and return false on failure.
+      $stmt->bind_result($key, $name);
+      $result = [];
+      while ( $stmt->fetch() ) {
+        $result[] = array( 'key' => $key, 'value' => $name );
+      }
+    } else echo $this->error;
+
+    if ( $stmt != NULL ) {
+      $stmt->close();
+    }
+
+    return $result;
+  }
+
+  /**
+   * Retrieves all occupations from the database
+   *
+   * @return array of arrays in key => value layout on success, NULL on failure
+   * @author Brian Turchyn
+   */
+  public function getOccupations( ) {
+    $result = null;
+    $stmt = null;
+
+    if( $stmt = $this->prepare($this->preparePrefix(self::getOccupations) ) ) {
       $stmt->execute();
       // Retrieve the result, and return false on failure.
       $stmt->bind_result($key, $name);

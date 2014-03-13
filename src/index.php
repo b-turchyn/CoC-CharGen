@@ -30,13 +30,14 @@ require_once CLSPATH.'message_service.php';
 require_once CLSPATH.'backgrounds.php';
 require_once CLSPATH.'dice.php';
 require_once CLSPATH.'names.php';
-require_once CLSPATH.'occupations.php';
+//require_once CLSPATH.'occupations.php';
 require_once CLSPATH.'stats.php';
 require_once CLSPATH.'sql.php';
 require_once CLSPATH.'ui.php';
 require_once MODELS.'era.php';
 require_once MODELS.'roll_type.php';
 require_once MODELS.'gender.php';
+require_once MODELS.'occupation.php';
 
 // This may end up redirecting us and we may not even continue.
 $controller = delegate( );

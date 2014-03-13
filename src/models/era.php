@@ -34,12 +34,10 @@ class Era
 
   static function getValue( $era ) {
     $result = NULL;
-    echo $era;
 
     foreach ( self::getEras( ) as $value ) {
       if( $value['key'] == $era ) {
         $result = $value['value'];
-        echo "Got it - ";
         break;
       }
     }

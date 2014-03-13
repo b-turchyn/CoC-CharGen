@@ -25,7 +25,7 @@ class MySQLQueries extends mysqli {
 
 
   // List of all eras
-  const getEras = "SELECT * FROM ?eras ORDER BY name ASC";
+  const getEras = "SELECT era_id, era_name FROM %seras WHERE deleted_dt IS NULL ORDER BY era_name ASC";
 
   const getEthnicityCount = 
     "";
@@ -97,6 +97,34 @@ class MySQLQueries extends mysqli {
   }
 
   /**
+   * Retrieves all eras from the database
+   *
+   * @return array of arrays in key => value layout on success, NULL on failure
+   * @author Brian Turchyn
+   */
+  public function getEras( ) {
+    $result = null;
+    $stmt = null;
+
+    if( $stmt = $this->prepare($this->preparePrefix(self::getEras) ) ) {
+      $stmt->execute();
+      // Retrieve the result, and return false on failure.
+      $stmt->bind_result($key, $name);
+      $result = [];
+      while ( $stmt->fetch() ) {
+        $result[] = array( 'key' => $key, 'value' => $name );
+      }
+    } else echo $this->error;
+
+    if ( $stmt != NULL ) {
+      $stmt->close();
+    }
+
+    return $result;
+  }
+
+
+  /**
    * Retrieves all ethnicities from the database
    *
    * @return array of arrays in key => value layout on success, null on failure
@@ -105,7 +133,7 @@ class MySQLQueries extends mysqli {
   public function getEthnicities( ) {
     $result = null;
     $stmt = null;
-    
+
     if( $stmt = $this->prepare($this->preparePrefix(self::getEthnicities) ) ) {
       $stmt->execute();
       // Retrieve the result, and return false on failure.
@@ -119,7 +147,7 @@ class MySQLQueries extends mysqli {
     if ( $stmt != null ) {
       $stmt->close();
     }
-    
+
     return $result;
   }
 

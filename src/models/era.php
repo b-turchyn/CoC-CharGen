@@ -20,19 +20,26 @@
 
 class Era
 {
-  public static $ERAS = array(
-    array( 'key' => '1890', 'value' => '1890s' ),
-    array( 'key' => '1920', 'value' => '1920s' ),
-    array( 'key' => '1990', 'value' => '1990s' ),
-    array( 'key' => 'dg', 'value' => 'Delta Green' )
-  );
+  private static $eras = NULL;
+
+  static function getEras( ) {
+    global $sql;
+
+    if( self::$eras === NULL ) {
+      self::$eras = $sql->getEras( );
+    }
+
+    return self::$eras;
+  }
 
   static function getValue( $era ) {
     $result = NULL;
+    echo $era;
 
-    foreach ( self::$ERAS as $value ) {
-      if( $value['key'] === $era ) {
+    foreach ( self::getEras( ) as $value ) {
+      if( $value['key'] == $era ) {
         $result = $value['value'];
+        echo "Got it - ";
         break;
       }
     }

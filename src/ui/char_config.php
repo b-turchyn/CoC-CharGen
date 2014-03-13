@@ -36,7 +36,7 @@ include UI.'message_service.php';
       <div class="control-group">
         <label class="control-label" for="era">Era</label>
         <div class="controls">
-          <?php echo UI::buildSelect( 'era', Era::$ERAS, 'era' ) ?>
+          <?php echo UI::buildSelect( 'era', Era::getEras( ), 'era' ) ?>
         </div>
       </div>
       <div class="control-group">

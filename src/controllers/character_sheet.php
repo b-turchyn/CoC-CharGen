@@ -40,10 +40,7 @@ if( isValid( $params, $msgs ) ) {
   $viewVars['gender'] = $gender['value'];
   
   // Generate Occupation information
-  $occupations = Occupation::getOccupations( );
-  $occupation = ( $params['occupation'] === 'R' ?
-    $occupations[mt_rand(1, count($occupations) - 1 )] :
-    Occupation::get( $params['occupation'] ) );
+  $occupation = getOccupation( $params );
   $viewVars['occupation'] = $occupation['value'];
 
   $viewVars['nationality'] = 'TODO';
@@ -63,7 +60,8 @@ if( isValid( $params, $msgs ) ) {
                      'era'          => $params['era'],
                      'stat_type'    => $params['stat_type'],
                      'gender'       => $params['gender'],
-                     'occupation'   => $params['occupation'] );
+                     'occupation'   => $params['occupation'],
+                     'lovecraftian' => $params['lovecraftian'] );
 }
 // Prepare output
 $_SESSION['messages'] = $msgs;
@@ -79,6 +77,7 @@ function updateParams( ) {
   $params['stat_type'] = getPostVar( 'stat_type' );
   $params['gender'] = getPostVar( 'gender' );
   $params['occupation'] = getPostVar( 'occupation' );
+  $params['lovecraftian'] = ( isset( $_POST['lovecraftian'] ) ? true : false );
 
   return $params;
 }
@@ -111,6 +110,22 @@ function isValid( $params, $msgs ) {
   }
 
   return !$msgs->hasErrors( );
+}
+
+function getOccupation( $params ) {
+  $result = NULL;
+  $occupations = Occupation::getOccupations( );
+
+  if( $params['occupation'] === 'R' ) {
+    $result = $occupations[mt_rand(2, count($occupations) - 1 )];
+  } elseif ( $params['occupation'] === 'E' ) {
+    $occupations = Occupation::getFromEra( $params['era'], $params['lovecraftian'] );
+    $result = $occupations[mt_rand(0, count($occupations) - 1 )];
+  } else {
+    $result = Occupation::get( $params['occupation'] );
+  }
+
+  return $result;
 }
 
 ?>

@@ -36,6 +36,27 @@ class UI
 EOF;
   }
 
+  static function buildCheckboxInput( $id, $name, $value, $checked = false, $klass = NULL ) {
+    $result = "<input type=\"checkbox\" id=\"" . htmlspecialchars( $id ) . "\"";
+
+    if ( $name != NULL ) {
+      $result .= " name=\"" . htmlspecialchars( $name ) . "\"";
+    }
+    if( $value !== NULL ) {
+      $result .= " value=\"" . htmlspecialchars( $value ) . "\"";
+    }
+    if ( $klass != NULL ) {
+      $result .= " class=\"" . htmlspecialchars ( $klass ) . "\"";
+    }
+    if( $checked == true ) {
+      $result .= " checked=\"checked\"";
+    }
+
+    $result .= ">";
+
+    return $result;
+  }
+
   static function buildTextInput( $id, $name = NULL, $value = NULL, $klass = NULL, $placeholder = NULL ) {
     $result = "<input type=\"text\" id=\"" . htmlspecialchars( $id ) . "\"";
 

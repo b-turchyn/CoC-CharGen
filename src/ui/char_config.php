@@ -47,12 +47,14 @@ include UI.'message_service.php';
       echo UI::buildControlGroup( 'gender', 'Gender', 
         UI::BuildSelect( 'gender', Gender::$GENDERS, 'gender', NULL, $viewVars['gender'] ) )
       ?>
-      <div class="control-group">
-        <label class="control-label" for="occupation">Occupation</label>
-        <div class="controls">
-          <?php echo UI::buildSelect( 'occupation', Occupation::getOccupations( ), 'occupation', NULL, $viewVars['occupation'] ) ?>
-        </div>
-      </div>
+      <?php
+      echo UI::buildControlGroup( 'occupation', 'Occupation',
+        UI::buildSelect( 'occupation', Occupation::getOccupations( ), 'occupation', NULL, $viewVars['occupation'] ) )
+      ?>
+      <?php
+      echo UI::buildControlGroup( 'lovecraftian', 'Lovecraft-based Occupations Only',
+        UI::buildCheckboxInput( 'lovecraftian', 'lovecraftian', 'true', $viewVars['lovecraftian'] ) )
+      ?>
       <div class="control-group">
         <div class="controls">
           <button type="submit" class="btn btn-primary" name="generate" value="Generate">Generate</button>

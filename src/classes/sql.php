@@ -27,6 +27,7 @@ class MySQLQueries extends mysqli {
   // List of all eras
   const getEras = "SELECT era_id, era_name FROM %seras WHERE deleted_dt IS NULL ORDER BY era_name ASC";
   const getOccupations = "SELECT occupation_id, occupation_name FROM %soccupations ORDER BY occupation_name ASC";
+  const getOccupationsFromEra = "select o.occupation_id, o.occupation_name FROM %1\$soccupations o INNER JOIN %1\$soccupation_eras oe ON o.occupation_id = oe.occupation_id WHERE oe.era_id = ? AND CASE 1 WHEN ? THEN o.lovecraftian_sw = 1 ELSE 1=1 END ORDER BY o.occupation_name";
 
   const getEthnicityCount = 
     "";
@@ -111,7 +112,7 @@ class MySQLQueries extends mysqli {
       $stmt->execute();
       // Retrieve the result, and return false on failure.
       $stmt->bind_result($key, $name);
-      $result = [];
+      $result = array();
       while ( $stmt->fetch() ) {
         $result[] = array( 'key' => $key, 'value' => $name );
       }
@@ -138,7 +139,40 @@ class MySQLQueries extends mysqli {
       $stmt->execute();
       // Retrieve the result, and return false on failure.
       $stmt->bind_result($key, $name);
-      $result = [];
+      $result = array();
+      while ( $stmt->fetch() ) {
+        $result[] = array( 'key' => $key, 'value' => $name );
+      }
+    } else echo $this->error;
+
+    if ( $stmt != NULL ) {
+      $stmt->close();
+    }
+
+    return $result;
+  }
+
+
+  /**
+   * Retrieves all occupations in a given era from the database
+   *
+   * @param $era the ID of the era to search in
+   * @param $lovecraftian Whether to select only Lovecraft-style occupations
+   * @return array of arrays in key => value layout on success, NULL on failure
+   * @author Brian Turchyn
+   */
+  public function getOccupationsFromEra($era, $lovecraftian) {
+    $result = null;
+    $stmt = null;
+
+    echo $lovecraftian;
+
+    if( $stmt = $this->prepare($this->preparePrefix(self::getOccupationsFromEra) ) ) {
+      $stmt->bind_param("ii", $era, $lovecraftian);
+      $stmt->execute();
+      // Retrieve the result, and return false on failure.
+      $stmt->bind_result($key, $name);
+      $result = array();
       while ( $stmt->fetch() ) {
         $result[] = array( 'key' => $key, 'value' => $name );
       }
@@ -166,7 +200,7 @@ class MySQLQueries extends mysqli {
       $stmt->execute();
       // Retrieve the result, and return false on failure.
       $stmt->bind_result($key, $name);
-      $result = [];
+      $result = array();
       while ( $stmt->fetch() ) {
         $result[] = array( 'key' => $key, 'value' => $name );
       }
@@ -311,7 +345,7 @@ class MySQLQueries extends mysqli {
 	 * @author Brian Turchyn
 	 */
 	private function preparePrefix($query) {
-		return preg_replace("/%s/", $this->prefix, $query);
+		return sprintf($query, $this->prefix);
 	}
 }
 ?>

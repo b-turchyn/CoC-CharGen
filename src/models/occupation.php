@@ -28,9 +28,16 @@ class Occupation
     if( self::$occupations === NULL ) {
       self::$occupations = $sql->getOccupations( );
       array_unshift( self::$occupations, array( 'key' => 'R', 'value' => 'Random' ) );
+      array_unshift( self::$occupations, array( 'key' => 'E', 'value' => 'Random Based On Era' ) );
     }
 
     return self::$occupations;
+  }
+
+  static function getFromEra( $era, $lovecraftian ) {
+    global $sql;
+
+    return $sql->getOccupationsFromEra( $era, ( $lovecraftian ? true : false ) );
   }
 
   static function getValue( $occupation ) {

@@ -36,11 +36,11 @@ function bufferflush ( )
   echo ( str_repeat ( ' ', 256 ) );
   // check that buffer is actually set before flushing
   if ( ob_get_length ( ) )
-  {            
+  {
     @ob_flush( );
     @flush( );
     @ob_end_flush( );
-  }    
+  }
   @ob_start( );
 }
 ?><?php include '../ui/header.php'; ?>
@@ -69,7 +69,7 @@ elseif ( file_exists ( CFG_FILE ) )
   <?php
 }
 // Check if we'll be able to write the config file
-elseif ( !file_exists ( CFG_FILE ) && !( touch ( CFG_FILE ) && unlink ( CFG_FILE ) ) )
+elseif ( !file_exists ( CFG_FILE ) && !( @touch ( CFG_FILE ) && unlink ( CFG_FILE ) ) )
 {
   ?>
       <div class="alert alert-error">
@@ -78,7 +78,7 @@ elseif ( !file_exists ( CFG_FILE ) && !( touch ( CFG_FILE ) && unlink ( CFG_FILE
   <?php
 }
 // Check if we'll be able to write the install lock
-elseif ( !file_exists ( INS_LOCK ) && !( touch ( INS_LOCK ) && unlink ( INS_LOCK ) ) )
+elseif ( !file_exists ( INS_LOCK ) && !( @touch ( INS_LOCK ) && unlink ( INS_LOCK ) ) )
 {
   ?>
       <div class="alert alert-error">
@@ -96,9 +96,9 @@ elseif ( isset ( $_POST[ 'coc_install' ] ) )
     $_POST['coc_prefix']
   );
   echo "<div class=\"alert alert-info\">Successfully connected to " . $sql->host_info . "</div>";
-	
+
   $failed = false;
-	
+
   // Get the SQL files
   $dir = 'tabledata';
   $files = scandir($dir, 0);
@@ -113,10 +113,10 @@ elseif ( isset ( $_POST[ 'coc_install' ] ) )
       // Output the current query being run, and flush the buffer
       echo "<tr><td>" . preg_replace ( "/.sql$/", "", $value ) . "</td><td class=\"table-result\">";
       bufferflush();
-			
+
       // Run the query
       $res = $sql->runQueryFromFile( $value );
-			
+
       // Display the result
       if ( $res == null )
       {
@@ -133,7 +133,7 @@ elseif ( isset ( $_POST[ 'coc_install' ] ) )
       echo "</td></tr>\n";
     }
   }
-	
+
   // Only write the config and lock the installer if we've succeeded
   if ( !$failed )
   {
@@ -162,7 +162,7 @@ elseif ( isset ( $_POST[ 'coc_install' ] ) )
       echo "<span class=\"label label-important\"><i class=\"icon-remove\"></i></span>\n";
     }
     echo "</td></tr>";
-	
+
     if ( !$failed )
     {
       // Lock the installer
@@ -180,7 +180,7 @@ elseif ( isset ( $_POST[ 'coc_install' ] ) )
   }
   echo "</td></tr>";
   echo "</table>\n";
-	
+
   // Display the overall result
   if ( !$failed )
   {
@@ -193,7 +193,7 @@ elseif ( isset ( $_POST[ 'coc_install' ] ) )
   {
     echo "<div class='alert alert-error'>One or more install queries failed. Your installation of CoC Chargen may not function properly!</div>";
   }
-	
+
 }
 else
 {
